@@ -1,0 +1,69 @@
+/*
+*
+* Blocks
+*/
+
+%block-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// The block element can be centered horizontally
+//
+.block-center {
+	@extend %block-center;
+}
+
+// Limits block width and block element can be centered horizontally
+//
+.block-xs {
+	max-width: 270px;
+	@extend %block-center;
+}
+
+.block-sm {
+	max-width: 370px;
+	@extend %block-center;
+}
+
+.block-md {
+	max-width: 420px;
+	@extend %block-center;
+}
+
+.block-lg {
+	max-width: 570px;
+	@extend %block-center;
+}
+
+.block-xl {
+	max-width: 870px;
+	@extend %block-center;
+}
+
+@include media-breakpoint-down(xs) {
+	.block-1 {
+		max-width: 370px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.block-2 {
+		max-width: 320px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.block-3 {
+		max-width: 270px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+ 
+
+
+
+
+
+
