@@ -1,0 +1,8 @@
+//- box icon
+mixin box-icon-classic(obj)
+  article.box-icon-classic(class=obj.mod)
+    .unit.unit-spacing-lg(class=obj.unit)
+      .unit-left: .box-icon-classic-icon(class=obj.icon)
+      .unit-body
+        h4.box-icon-classic-title: a( href='theme/single-service.html')=obj.title
+        p.box-icon-classic-text=obj.text ? obj.text : 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh'

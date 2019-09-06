@@ -1,0 +1,183 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-box-icon
+
+block variables
+
+block page
+	section.section.text-left.context-dark.section-relative.section-style-1.parallax-scene-js
+		.container: .row
+			.col-10.col-sm-7.col-md-6.col-lg-5.position-static
+				a.link-logo( href='./' ): +png( 'logo-inverse-150x29' )
+				h5.wow.fadeInLeft( data-wow-delay='0s' ) Perfect choice for
+				h1.oh
+					span.d-inline-block.wow.slideInDown( data-wow-delay='.1s' ).font-weight-ubold Industrial
+					span.d-inline-block.wow.slideInUp( data-wow-delay='.2s' ).font-weight-thin Sector
+				a.button.button-lg.button-primary.button-winona.wow.fadeInLeft( data-wow-delay='.3s' href='https://www.templatemonster.com/website-templates/dynamics-industrial-multipage-html5-website-template-70384.html' target="_blank") Buy now
+				.bg-image-left
+		.container-scene
+			.layer-1: .layer( data-depth="0.3"): a( href='theme/index.html' ): +png( 'layout-8-420x438' )
+			.layer-2: .layer( data-depth="0.4"): a( href='theme/cement.html' ): +png( 'layout-9-420x438' )
+			.layer-3: .layer( data-depth="0.5"): a( href='theme/mining.html' ): +png( 'layout-10-420x438' )
+		.bg-image-right
+
+	// Box Icon
+	section.section.section-lg.bg-default.text-md-left
+		.container: .row.row-60
+			.col-sm-6.col-xl-4.wow.fadeInRight( data-wow-delay='0s' )
+				+box-icon-classic({
+					unit: 'flex-column text-center flex-md-row text-md-left',
+					icon: 'linearicons-star',
+					title: '7 Unique Layouts',
+					text: 'This template features 7 different layouts for the website of your industrial company'
+				})
+			.col-sm-6.col-xl-4.wow.fadeInRight( data-wow-delay='.1s' )
+				+box-icon-classic({
+					unit: 'flex-column text-center flex-md-row text-md-left',
+					icon: 'linearicons-bubble-text',
+					title: '24/7 Support',
+					text: 'After purchasing Dynamics, you get extensive 24/7 premium support with this template.'
+				})
+			.col-sm-6.col-xl-4.wow.fadeInRight( data-wow-delay='.2s' )
+				+box-icon-classic({
+					unit: 'flex-column text-center flex-md-row text-md-left',
+					icon: 'linearicons-file-image',
+					title: 'All Images Included',
+					text: 'The template includes more than 100 images that can transform your website.'
+				})
+			.col-sm-6.col-xl-4.wow.fadeInLeft( data-wow-delay='0s' )
+				+box-icon-classic({
+					unit: 'flex-column text-center flex-md-row text-md-left',
+					icon: 'linearicons-power',
+					title: 'Extremely Fast',
+					text: 'Dynamics has fully optimized performance that makes this template load a lot faster.'
+				})
+			.col-sm-6.col-xl-4.wow.fadeInLeft( data-wow-delay='.1s' )
+				+box-icon-classic({
+					unit: 'flex-column text-center flex-md-row text-md-left',
+					icon: 'linearicons-gift',
+					title: 'Free Plugins',
+					text: 'Take advantage of using fully functional free plugins supplied with this HTML Template.'
+				})
+			.col-sm-6.col-xl-4.wow.fadeInLeft( data-wow-delay='.2s' )
+				+box-icon-classic({
+					unit: 'flex-column text-center flex-md-row text-md-left',
+					icon: 'linearicons-files',
+					title: 'Predesigned Pages',
+					text: 'The template also includes lots of predesigned pages that allow you to build your website.'
+				})
+	='\n'
+	
+	// Section layout
+	section.section.section-lg.section-fluid.bg-gray-100.text-center
+		.container-fluid.isotope-wrap
+			.title-group
+				h2.oh: span.d-inline-block.wow.slideInDown( data-wow-delay='0s' ) 7 homepage layouts
+				p.oh.big.text-width-large: span.d-inline-block.wow.slideInUp( data-wow-delay='.1s' ) Dynamics template comes with a variety of homepage layouts for various industries. These pages are fully customizable and will perfectly fit your website.
+			.row.row-40.row-lg-60.gutters-xxl-90.isotope
+				.col-sm-6.col-xl-4.isotope-item.oh
+					.box-layout.box-layout-long.wow.slideInLeft( data-wow-delay='0s' )
+						.box-layout-figure-wrap: a.box-layout-figure( href='theme/index.html' ): +jpg( 'layout-1-510x1817' )
+						h4.box-layout-title: a( href='theme/index.html' ) Gas & Oil
+				.col-sm-6.col-xl-4.isotope-item.oh
+					.box-layout.wow.slideInDown( data-wow-delay='.1s' )
+						.box-layout-figure-wrap: a.box-layout-figure( href='theme/mining.html' ): +jpg( 'layout-2-510x1982' )
+						h4.box-layout-title: a( href='theme/mining.html' ) Mining
+				.col-sm-6.col-xl-4.isotope-item.oh
+					.box-layout.box-layout-long.wow.slideInRight( data-wow-delay='.2s' )
+						.box-layout-figure-wrap: a.box-layout-figure( href='theme/welding.html' ): +jpg( 'layout-3-510x1964' )
+						h4.box-layout-title: a( href='theme/welding.html' ) Welding
+				.col-sm-6.col-xl-4.isotope-item.oh
+					.box-layout.wow.slideInUp( data-wow-delay='0s' )
+						.box-layout-figure-wrap: a.box-layout-figure( href='theme/steelworks.html' ): +jpg( 'layout-4-510x1855' )
+						h4.box-layout-title: a( href='theme/steelworks.html' ) Steelworks
+				.col-sm-6.col-xl-4.isotope-item.oh
+					.box-layout.box-layout-long.wow.slideInRight( data-wow-delay='0s' )
+						.box-layout-figure-wrap: a.box-layout-figure( href='theme/cement.html' ): +jpg( 'layout-5-510x2131' )
+						h4.box-layout-title: a( href='theme/cement.html' ) Cement
+				.col-sm-6.col-xl-4.isotope-item.oh
+					.box-layout.box-layout-long.wow.slideInLeft( data-wow-delay='.1s' )
+						.box-layout-figure-wrap: a.box-layout-figure( href='theme/civil-engineering.html' ): +jpg( 'layout-6-510x1858' )
+						h4.box-layout-title: a( href='theme/civil-engineering.html' ) Civil Engineering
+				.col-sm-6.col-xl-4.isotope-item.oh
+					.box-layout.wow.slideInDown( data-wow-delay='.2s' )
+						.box-layout-figure-wrap: a.box-layout-figure( href='theme/woodworking.html' ): +jpg( 'layout-7-510x2323' )
+						h4.box-layout-title: a( href='theme/woodworking.html' ) Woodworking
+	='\n'
+	
+	// Works perfectly on any device
+	section.section.section-md.bg-default.text-md-left.section-relative.oh
+		.container: .row.row-30.align-items-center.justify-content-center
+			.col-sm-10.col-md-7.col-lg-6.col-xl-5: .offset-right-xl-30.wow.slideInLeft( data-wow-delay='0s' )
+				// Owl Carousel
+				.owl-carousel.owl-style-1( data-items='2', data-stage-padding='0', data-loop='true', data-margin='0', data-mouse-drag="true", data-autoplay='true' )
+					.box-device: +png( 'phone-1-260x520' )
+					.box-device: +png( 'phone-2-260x520' )
+			.col-md-10.col-lg-6.col-xl-7: .offset-left-xl-70
+				h2.oh.text-width-small: span.d-inline-block.wow.slideInDown( data-wow-delay='0s' ) Works perfectly on any device
+				p.oh.big: span.d-inline-block.wow.slideInUp( data-wow-delay='.1s' ) Dynamics is designed and developed according to the latest industry standards, which makes it a perfect template.
+				hr
+				.row.row-30
+					.col-sm-6.col-lg-12.col-xl-5
+						.box-info
+							h4.box-info-title
+								span.icon.mdi.mdi-check
+								span Fully Responsive
+							p.big.box-info-text Dynamics can be displayed on any modern device.
+					.col-sm-6.col-lg-12.col-xl-7
+						.box-info
+							h4.box-info-title
+								span.icon.mdi.mdi-check
+								span Retina Ready
+							p.big.box-info-text It is 100% optimized for displays with the highest screen resolutions.
+				a.button.button-lg.button-primary.button-winona( href='https://www.templatemonster.com/website-templates/dynamics-industrial-multipage-html5-website-template-70384.html' target="_blank") Buy template
+		
+		.box-image-right Works perfectly on any device
+			.wow.slideInRight( data-wow-delay='0s' ): +png( 'pipeline-1-535x867' ).box-image-pipeline
+	='\n'
+	
+	// Section pages
+	section.section.section-lg.section-carousel.bg-gray-100.text-center
+		.container-fluid
+			.title-group
+				h2.oh: span.d-inline-block.wow.slideInDown( data-wow-delay='0s' ) 30+ PreDesigned Pages
+				h4.oh.text-primary.text-spacing-75: span.d-inline-block.wow.slideInUp( data-wow-delay='.1s' ) Tell your clients about your company
+			// Owl Carousel
+			.owl-carousel.owl-style-2( data-items='1', data-sm-items='2', data-lg-items='3', data-stage-padding='15', data-loop='true', data-margin='30', data-xxl-margin='90', data-mouse-drag="true", data-autoplay='true', data-nav='true' )
+				.box-pages
+					a.box-pages-figure( href='theme/services.html' ): +jpg( 'pages-1-510x444' )
+					h4.box-pages-title: a( href='theme/services.html' ) Services #1
+				.box-pages
+					a.box-pages-figure( href='theme/project-page.html' ): +jpg( 'pages-2-510x444' )
+					h4.box-pages-title: a( href='theme/project-page.html' ) Project Page
+				.box-pages
+					a.box-pages-figure( href='theme/single-service.html' ): +jpg( 'pages-3-510x444' )
+					h4.box-pages-title: a( href='theme/single-service.html' ) Single Service
+				.box-pages
+					a.box-pages-figure( href='theme/masonry-blog.html' ): +jpg( 'pages-4-510x444' )
+					h4.box-pages-title: a( href='theme/masonry-blog.html' ) Masonry Blog
+				.box-pages
+					a.box-pages-figure( href='theme/grid-gallery.html' ): +jpg( 'pages-5-510x444' )
+					h4.box-pages-title: a( href='theme/grid-gallery.html' ) Grid Gallery
+				.box-pages
+					a.box-pages-figure( href='theme/services-4.html' ): +jpg( 'pages-6-510x444' )
+					h4.box-pages-title: a( href='theme/services-4.html' ) Services #4
+				.box-pages
+					a.box-pages-figure( href='theme/projects.html' ): +jpg( 'pages-7-510x444' )
+					h4.box-pages-title: a( href='theme/projects.html' ) Projects
+	='\n'
+	
+	// Subscribe to Our Newsletter
+	+parallax({
+		img: 'bg-index-1',
+		innerClass: 'section-xl section-bottom-xxl-170 context-dark'
+	})
+		.container
+			h2.oh: span.d-inline-block.wow.slideInDown( data-wow-delay='0s' ) 24/7 customer Support
+			h4.oh: span.d-inline-block.wow.slideInUp( data-wow-delay='.1s' ) To help you establish your company website
+			a.button.button-lg.button-primary.button-winona.wow.fadeInUp( href='https://www.templatemonster.com/website-templates/dynamics-industrial-multipage-html5-website-template-70384.html' data-wow-delay='.2s' target="_blank") Buy template
+	='\n'
+	
+	// Page Footer
+	include ../sections/_footer-classic
