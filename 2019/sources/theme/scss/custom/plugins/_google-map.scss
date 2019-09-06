@@ -1,0 +1,42 @@
+/** @section Google Map */
+
+.google-map-markers {
+	display: none;
+}
+
+.google-map-container {
+	width: 100%;
+}
+
+.google-map {
+	height: $map-height;
+	width: 100%;
+
+	@include media-breakpoint-up(md) {
+		height: $map-md-height;
+	}
+
+	@include media-breakpoint-up(xl) {
+		height: $map-xl-height;
+	}
+}
+
+
+// Gmap Classic
+.gmap-classic {
+	
+
+	@include media-breakpoint-up(lg) {
+		position: absolute;
+		content: '';
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 50%;
+
+		.google-map-container,
+		.google-map {
+			height: 100%;
+		}
+	}
+}
