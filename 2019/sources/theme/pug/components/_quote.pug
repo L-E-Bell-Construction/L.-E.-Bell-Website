@@ -1,0 +1,47 @@
+//- quote
+
+mixin quote-classic( obj )
+	// Quote Classic
+	article.quote-classic&attributes( attributes )
+		.quote-classic-text: p.q= obj.text
+		if( obj.author )
+			p.quote-classic-author= obj.author
+
+mixin quote-modern( obj )
+	// Quote Modern
+	article.quote-modern&attributes( attributes )
+		h5.quote-modern-text: span.q= obj.text
+		h5.quote-modern-author= obj.author + ','
+		p.quote-modern-status= obj.status
+
+mixin quote-creative( obj )
+	// Quote Creative
+	article.quote-creative&attributes( attributes )
+		.quote-creative-figure: +img( obj.img )
+		.quote-creative-caption
+			.quote-creative-text: p.q= obj.text
+			if( obj.author )
+				p.quote-creative-author= obj.author
+
+mixin quote-ella( obj )
+	// Quote Ella
+	article.quote-ella&attributes( attributes )
+		.quote-ella-text: p.q= obj.text
+
+mixin quote-tara( obj )
+	// Quote Tara
+	article.quote-tara&attributes( attributes )
+		.quote-tara-caption
+			.quote-tara-text: p.q= obj.text
+			.quote-tara-figure: +img( obj.img )
+		h6.quote-tara-author= obj.author
+		.quote-tara-status= obj.status
+
+mixin quote-paris( obj )
+	// Quote Paris
+	article.quote-paris&attributes( attributes )
+		.row.row-30
+			.col-lg-6: h5.quote-paris-text: span.q= obj.text
+			.col-lg-6
+				p= obj.text2
+				.quote-paris-author= obj.author

@@ -1,0 +1,370 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-corporate
+include ../sections/_footer-creative
+include ../components/_box-icon
+include ../components/_box-services
+include ../components/_thumbnail
+include ../components/_quote
+include ../components/_card
+include ../components/_counters
+include ../components/_posts
+
+block variables
+	-
+		var
+			pageName = 'Civil Engineering',
+			style = '5';
+
+		logo = {
+			default: 'logo-default-5-233x102.png',
+			inverse: 'logo-inverse-5-233x102.png',
+			name: 'Architectus'
+		};
+
+block page
+
+	// Page Header and Swiper
+	section.section.swiper-custom-container-3
+		+navbar-corporate
+
+		include ../sections/_section-slider-5
+
+	// Our services
+	section.section.section-inset-6.bg-default
+		.container
+			h4.wow.fadeInLeft Our services
+			.row.row-xs.no-md-gutters.justify-content-center.bordered-2
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-math-compass',
+							title: 'Architectural Design',
+							text: 'We provide architectural design services for building & construction industry.'
+						}).wow.fadeInDown
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-format-paint icon-32',
+							title: 'Reconstruction',
+							text: 'Our professional reconstruction solutions are very reliable and dependable.'
+						}).wow.fadeInDown( data-wow-delay='.1s' )
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-worker icon-39',
+							title: 'General Contracting',
+							text: 'We can offer a reliable general contractor for all your construction needs.'
+						}).wow.fadeInDown( data-wow-delay='.2s' )
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-comment-processing-outline icon-30',
+							title: 'Consulting',
+							text: 'Our experts are always ready to consult you on any civil engineering related topic.'
+						}).wow.fadeInUp( data-wow-delay='.2s' )
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-leaf icon-28',
+							title: 'Green Construction',
+							text: 'Green construction reduces expenses and negative impact on environment.'
+						}).wow.fadeInUp( data-wow-delay='.1s' )
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-thumb-up-outline icon-30',
+							title: 'Quality Control',
+							text: 'We control the quality of all our projects, especially the most complex ones.'
+						}).wow.fadeInUp
+
+
+	section.section.bg-image-4
+		.container-fluid.container-inset-0: .row.no-gutters
+			.col-md-4.col-lg-5.col-xl-6.box-transform-wrap.box-transform-1: .box-transform( style='background-image: url(images/bg-index-12.jpg);' )
+			.col-md-8.col-lg-7.col-xl-6.bg-image-3
+				#tabs-12.tabs-custom.tabs-custom-3
+					.tab-content.tab-content-4.section-inset-7
+						#tabs-12-1.tab-pane.fade.show.active
+							h4.oh-desktop: span.d-inline-block.wow.slideInLeft 24 years of experience
+							p.wow.fadeInRight Since 1994, we have been providing communities and governments worldwide with high-quality civil engineering services.
+							.button-wrap.oh-desktop: a.button.button-icon.button-icon-right.button-primary.wow.slideInUp( href='about-us.html' )
+								span.icon.mdi.mdi-chevron-right
+								| Read more
+						#tabs-12-2.tab-pane.fade
+							h4 Ensuring the best quality
+							p All projects of our engineers are checked for high quality using the latest technologies and innovations in quality control.
+							a.button.button-icon.button-icon-right.button-primary( href='#' )
+								span.icon.mdi.mdi-chevron-right
+								| Read more
+						#tabs-12-3.tab-pane.fade
+							h4 Developing infrastructure
+							p Our global goals are to design, build, and manage projects and programs that unlock opportunities and protect our environment.
+							a.button.button-icon.button-icon-right.button-primary( href='#' )
+								span.icon.mdi.mdi-chevron-right
+								| Read more
+					ul.nav.nav-tabs-3
+						li.nav-item-3( role='presentation' ): a.nav-link-3.active( href='#tabs-12-1', data-toggle='tab' ): span About us
+						li.nav-item-3( role='presentation' ): a.nav-link-3( href='#tabs-12-2', data-toggle='tab' ): span Quality control
+						li.nav-item-3( role='presentation' ): a.nav-link-3( href='#tabs-12-3', data-toggle='tab' ): span Our Goals
+
+
+
+	// Latest projects
+	section.section.section-xl.bg-default.text-center
+		.container
+			.group-xl.group-sm-justify
+				h4.oh-desktop: span.d-inline-block.wow.slideInLeft Why choose us
+				.dots-custom
+			.owl-carousel.owl-style-3( data-items='1', data-sm-items='2', data-lg-items='3', data-margin='30', data-autoplay='true', data-dots='true', data-animation-in='fadeIn', data-animation-out='fadeOut', data-pagination-class='.dots-custom' )
+				+services-creative({
+					img: 'services-19-370x230',
+					title: 'Modern Technology',
+					text: 'Our team uses the latest technologies to design high-quality civil objects.',
+					number: '01'
+				})
+				+services-creative({
+					img: 'services-7-370x230',
+					title: 'Experienced Team',
+					text: 'We are a team of experienced civil engineers working to build a better world.',
+					number: '02'
+				})
+				+services-creative({
+					img: 'services-20-370x230',
+					title: 'Quality Materials',
+					text: 'High-quality materials are the absolute guarantee of building dependable facilities.',
+					number: '03'
+				})
+				+services-creative({
+					img: 'services-21-370x230',
+					title: 'Powerful Equipment',
+					text: 'We use modern & powerful equipment to create efficient and reliable infrastructure.',
+					number: '04'
+				})
+
+
+	// Section CTA
+	+parallax({
+		img: 'bg-index-11',
+		innerClass: 'section-sm section-inset-1 context-dark text-md-left'
+	})
+		.container: .row.row-30.justify-content-center.align-items-center
+			.col-sm-10.col-md-7.col-lg-6.col-xl-9
+				h5.font-weight-normal.text-transform-none.oh-desktop: span.d-inline-block.wow.slideInUp Creating Efficient Infrastructure Since 1994
+			.col-md-5.col-lg-4.col-xl-3.text-md-right.oh-desktop
+				a.button.button-outline.button-icon.button-icon-right.wow.slideInDown( href='contacts.html' )
+					span.icon.mdi.mdi-chevron-right
+					| Get in touch
+
+
+	// Latest projects
+	section.section.section-xl.bg-default.text-center
+		.container
+			h4.wow.fadeInRight Latest projects
+		.container-fluid.container-inset-0
+			.row.row-30.row-desktop-8.gutters-8.hoverdir( data-lightgallery='group' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'grid-gallery-1-474x355',
+						imgOriginal: 'grid-gallery-1-1200x800-original',
+						title: 'Graham Bridge',
+						badge: 'Construction management'
+					}).block-1.hoverdir-item.wow.slideInRight( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'grid-gallery-2-474x355',
+						imgOriginal: 'grid-gallery-2-1200x800-original',
+						title: 'Dallas art park',
+						badge: 'Consulting'
+					}).block-1.hoverdir-item.wow.slideInUp( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'grid-gallery-3-474x355',
+						imgOriginal: 'grid-gallery-3-1200x800-original',
+						title: 'Smith office center',
+						badge: 'Green construction'
+					}).block-1.hoverdir-item.wow.slideInDown( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'grid-gallery-4-474x355',
+						imgOriginal: 'grid-gallery-4-1200x800-original',
+						title: 'Beyer concert hall',
+						badge: 'General contracting'
+					}).block-1.hoverdir-item.wow.slideInLeft( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'grid-gallery-5-474x355',
+						imgOriginal: 'grid-gallery-5-1200x800-original',
+						title: 'Deltatrans warehouse',
+						badge: 'Construction planning'
+					}).block-1.hoverdir-item.wow.slideInRight( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'grid-gallery-6-474x355',
+						imgOriginal: 'grid-gallery-6-1200x800-original',
+						title: 'Abington Private school',
+						badge: 'Construction'
+					}).block-1.hoverdir-item.wow.slideInDown( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'grid-gallery-7-474x355',
+						imgOriginal: 'grid-gallery-7-1200x800-original',
+						title: 'LA community center',
+						badge: 'Reconstruction'
+					}).block-1.hoverdir-item.wow.slideInUp( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'grid-gallery-8-474x355',
+						imgOriginal: 'grid-gallery-8-1200x800-original',
+						title: 'Department of water',
+						badge: 'Architectural design'
+					}).block-1.hoverdir-item.wow.slideInLeft( data-hoverdir-target='.thumbnail-modern-caption' )
+
+
+	section.section.swiper-container.swiper-slider.swiper-slider-8.swiper-slider-10( data-loop='true', data-autoplay='5000', data-simulate-touch='false', data-slide-effect='fade' )
+		.swiper-wrapper.text-left
+			.swiper-slide.context-dark: .swiper-slide-caption.section-lg
+				.container: .row.justify-content-center.justify-content-md-between
+					.col-5.d-none.d-md-block.position-static: .quote-classic-figure: +img( 'clients-24-960x574' )
+					.col-sm-11.col-md-7.col-xl-6: .inset-left-xl-70
+						h4 What clients say
+						+quote-classic({
+							text: 'Architectus showed keenness to be involved in our reconstruction project and did an amazing job, which we are all grateful for.',
+							author: 'Mary Adams, CEO “alfaindustry”'
+						}).quote-classic-2.quote-classic-4( data-caption-animate='fadeInLeft', data-caption-delay='0' )
+			.swiper-slide.context-dark: .swiper-slide-caption.section-lg
+				.container: .row.justify-content-center.justify-content-md-between
+					.col-5.d-none.d-md-block.position-static: .quote-classic-figure: +img( 'clients-25-960x574' )
+					.col-sm-11.col-md-7.col-xl-6: .inset-left-xl-70
+						h4 What clients say
+						+quote-classic({
+							text: 'Their commitment to quality and understanding of the importance of a cohesive approach makes them a great business partner.',
+							author: 'Sam Peterson, CFO “Ardion Ltd.”'
+						}).quote-classic-2.quote-classic-4( data-caption-animate='fadeInLeft', data-caption-delay='0' )
+			.swiper-slide.context-dark: .swiper-slide-caption.section-lg
+				.container: .row.justify-content-center.justify-content-md-between
+					.col-5.d-none.d-md-block.position-static: .quote-classic-figure: +img( 'clients-26-960x574' )
+					.col-sm-11.col-md-7.col-xl-6: .inset-left-xl-70
+						h4 What clients say
+						+quote-classic({
+							text: 'I have no hesitation in recommending Architectus as a contractor that can deliver great results within tight deadlines.',
+							author: 'Peter Smith, founder of “ZTX Corp.”'
+						}).quote-classic-2.quote-classic-4( data-caption-animate='fadeInLeft', data-caption-delay='0' )
+		// Swiper Navigation
+		.swiper-navigation__module
+			.swiper-pagination__fraction
+				span.swiper-pagination__fraction-index
+				span.swiper-pagination__fraction-divider /
+				span.swiper-pagination__fraction-count
+			.swiper-button-prev
+			.swiper-button-next
+
+		// Swiper Pagination
+		.swiper-pagination( data-bullet-custom='true' )
+
+
+	// Our Services
+	section.section.section-xl.bg-default.text-md-left
+		.container
+			.row.row-xxl.row-50.justify-content-lg-between
+				.col-md-6
+					h4 FAQ
+					// Bootstrap collapse
+					#accordion6.card-group-classic( role='tablist', aria-multiselectable='false' )
+						+card({
+							show: true,
+							parentId: 'accordion6',
+							title: 'What do I receive when I order a template from you?'
+						}).card-classic.card-classic-2.wow.fadeInLeft
+							p After you complete the payment via our secure form you will receive the instructions for downloading the product. The source files in the download package can vary based on the product type.
+						+card({
+							parentId: 'accordion6',
+							title: 'What are the advantages of purchasing a template?'
+						}).card-classic.card-classic-2.wow.fadeInLeft( data-wow-delay='.05s' )
+							p The major advantage is price: You get a high quality design for just $20-$70. You don’t have to hire a web designer or web design studio. Second advantage is time frame: It usually takes 5-15 days for a good designer to produce a web page of such quality.
+						+card({
+							parentId: 'accordion6',
+							title: 'Do you provide any scripts with your templates?'
+						}).card-classic.card-classic-2.wow.fadeInLeft( data-wow-delay='.1s' )
+							p Our templates do not include any additional scripts. Newsletter subscriptions, search fields, forums, image galleries (in HTML versions of Flash products) are inactive. Basic scripts can be easily added at zemez.io If you are not sure that the element you’re interested in is active please contact our Support Chat for clarification.
+						+card({
+							parentId: 'accordion6',
+							title: 'In what formats are your templates available?'
+						}).card-classic.card-classic-2.wow.fadeInLeft( data-wow-delay='.15s' )
+							p Website templates are available in Photoshop and HTML formats. Fonts are included with Photoshop file. In most templates HTML is compatible with Adobe® Dreamweaver® and Microsoft Frontpage®.
+
+				.col-md-6.col-lg-5
+					article.team-classic.team-classic-2: .unit.flex-column.flex-sm-row.align-items-start.align-items-sm-center
+						.unit-left: a.team-classic-figure-3( href='#' ): +img( 'team-37-99x99' )
+						.unit-body
+							h5.team-classic-title-2 Contact Us! We'll get in touch as soon as possible.
+							.team-classic-name
+								a( href='#' ) Alice Parker
+								| , #[span Manager]
+					//- Contact forms
+					form.rd-form.rd-mailform( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+						.form-wrap.wow.fadeInRight
+							input#contact-name-6.form-input( type='text', name='name', data-constraints='@Required' )
+							label.form-label( for='contact-name-6' ) Your Name*
+						.form-wrap.wow.fadeInRight( data-wow-delay='.05s' )
+							input#contact-email-6.form-input( type='email', name='email', data-constraints='@Email @Required' )
+							label.form-label( for='contact-email-6' ) Your E-mail*
+						.form-wrap.wow.fadeInRight( data-wow-delay='.15s' )
+							//Select 2
+							select.form-input( data-minimum-results-for-search='Infinity', data-constraints='@Required' )
+								option( value='1' ) Select a Service
+								option( value='2' ) Construction
+								option( value='3' ) Architectural Design
+								option( value='4' ) Consulting
+						.form-wrap.wow.fadeInRight( data-wow-delay='.2s' )
+							input.form-input( id='contact-phone-6', type='text', name='phone', data-constraints='@Numeric' )
+							label.form-label( for='contact-phone-6' ) Phone
+
+						button.button.button-icon.button-icon-right.button-gray-3.wow.fadeInRight( type='submit', data-wow-delay='.25s' )
+							span.icon.mdi.mdi-chevron-right
+							| Get in touch
+
+
+	+parallax({
+		img: 'bg-counter-6',
+		innerClass: 'section-xxl context-dark'
+	})
+		.container
+			h5.font-weight-light.text-spacing-200.wow.fadeInLeft We are focused on results
+			h2.font-weight-light.text-spacing-200.wow.fadeInRight Our Facts
+			.counter-modern-wrap
+				+counter-modern({
+					number: '101',
+					symbol: '+',
+					title: 'Projects'
+				})
+				+counter-modern({
+					number: '53',
+					title: 'Awards'
+				})
+				+counter-modern({
+					number: '246',
+					symbol: '+',
+					title: 'People'
+				})
+
+
+	// Our Clients
+	include ../sections/_clients-creative
+
+
+	// Page Footer
+	+footer-creative({
+		text: 'Providing trustworthy civil engineering services',
+		posts: [
+			{
+				img: 'engineering/post-1-115x89',
+				title: 'We Won Best Industries Services Award – 2019'
+			},
+			{
+				img: 'engineering/post-2-115x89',
+				title: 'Contemporary Technology For Construction Industry'
+			}
+		]
+	}).footer-creative-2

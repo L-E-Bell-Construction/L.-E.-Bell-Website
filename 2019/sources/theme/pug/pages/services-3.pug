@@ -1,0 +1,76 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_box-icon
+
+block variables
+	-
+		var
+			activeCategory = 'pages',
+			pageName = 'Services #3';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-services'
+	})
+
+	// Services 3
+	section.section.section-inset-5.bg-default
+		.container
+			.row.no-md-gutters.justify-content-center.bordered-2
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-math-compass',
+							title: 'Architectural Design',
+							text: 'Regius hippotoxota callide experientias tata est. Tolerare sensim ducunt ad lotus'
+						})
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-format-paint icon-32',
+							title: 'Reconstruction',
+							text: 'Azureus, domesticus stellas virtualiter anhelare de mirabilis, ferox mons.'
+						})
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-worker icon-39',
+							title: 'General Contracting',
+							text: 'Peritus, neuter coordinataes satis transferre de magnum, rusticus amicitia.'
+						})
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-comment-processing-outline icon-30',
+							title: 'Consulting',
+							text: 'Cum brodium accelerare, omnes stellaes examinare festus, varius idoleumes.'
+						})
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-leaf icon-28',
+							title: 'Green Construction',
+							text: 'Brevis, emeritis paluss saepe attrahendam de albus, camerarius fiscina.'
+						})
+				.col-sm-6.col-lg-4
+					.services-modern
+						+box-icon-modern({
+							icon: 'mdi mdi-thumb-up-outline icon-30',
+							title: 'Quality Control',
+							text: 'Cum fluctui tolerare, omnes rationees promissio primus, magnum cannabises.'
+						})
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

@@ -1,0 +1,518 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_box-services
+include ../components/_quote
+include ../components/_box-icon
+include ../components/_box-team
+include ../components/_posts
+
+block page
+
+	// Page Header
+	+navbar-classic
+
+	// Swiper
+	include ../sections/_section-slider
+
+	// About Our Company
+	section.section.section-xl.bg-default.text-md-left
+		.container: #tabs-6.tabs-custom.row.row-50.align-items-center.flex-xl-row-reverse.text-center.text-md-left
+			.col-xl-3
+				h5.text-spacing-200 What we can offer
+				ul.nav.list-category.list-category-down-lg-inline-block
+					li.list-category-item.wow.fadeInRight( role='presentation', data-wow-delay='0s' ): a.active( href='#tabs-6-1', data-toggle='tab' ) Exploration and production
+					li.list-category-item.wow.fadeInRight( role='presentation', data-wow-delay='.1s' ): a( href='#tabs-6-2', data-toggle='tab' ) Transformation
+					li.list-category-item.wow.fadeInRight( role='presentation', data-wow-delay='.2s' ): a( href='#tabs-6-3', data-toggle='tab' ) Development
+					li.list-category-item.wow.fadeInRight( role='presentation', data-wow-delay='.3s' ): a( href='#tabs-6-4', data-toggle='tab' ) Shipping
+				.link-classic: a( href= links.services ) See all services
+			.col-xl-9
+				// Tab panes
+				.tab-content.tab-content-1.wow.fadeInLeft( data-wow-delay='0s' )
+					#tabs-6-1.tab-pane.fade.show.active
+						.row.row-40.align-items-center.justify-content-center.justify-content-md-start
+							.col-sm-11.col-md-6.col-lg-5
+								h3 About our company
+								.title-decor-left Working since 1990
+								p Our company provides sustainable exploration and production solutions that respond to our future energy challenges.
+								a.button.button-lg.button-width-auto.button-outline.button-default-outline-2.button-winona( href='about-us.html' ) Read more
+							.col-sm-9.col-md-6.col-xl-7
+								// Owl Carousel
+								.owl-style-1
+									.owl-carousel( data-items='1', data-dots='true', data-pagination-class='.dots-custom', data-numbering='#owl-numbering-1', data-animation-in='fadeIn', data-animation-out='fadeOut', data-margin='1' )
+										+img( 'index-1-370x436' )
+										+img( 'index-2-370x436' )
+										+img( 'index-3-370x436' )
+										+img( 'index-4-370x436' )
+
+									.dots-custom-wrap
+										.dots-custom
+										#owl-numbering-1.owl-numbering
+											.numbering-current
+											.numbering-separator \
+											.numbering-count
+
+					#tabs-6-2.tab-pane.fade
+						.row.row-40.align-items-center.justify-content-center.justify-content-md-start
+							.col-sm-11.col-md-6.col-lg-5
+								h3 About our company
+								.title-decor-left Working since 1995
+								p We offer transformation solutions for enterprises worldwide that are designed to improve oil & gas production efficiency.
+								a.button.button-lg.button-width-auto.button-outline.button-default-outline-2.button-winona( href='about-us.html' ) Read more
+							.col-sm-9.col-md-6.col-xl-7
+								// Owl Carousel
+								.owl-style-1
+									.owl-carousel( data-items='1', data-dots='true', data-pagination-class='.dots-custom-2', data-numbering='#owl-numbering-2', data-animation-in='fadeIn', data-animation-out='fadeOut', data-margin='1' )
+										+img( 'index-2-370x436' )
+										+img( 'index-3-370x436' )
+										+img( 'index-4-370x436' )
+										+img( 'index-1-370x436' )
+
+									.dots-custom-wrap
+										.dots-custom-2
+										#owl-numbering-2.owl-numbering
+											.numbering-current
+											.numbering-separator \
+											.numbering-count
+
+					#tabs-6-3.tab-pane.fade
+						.row.row-40.align-items-center.justify-content-center.justify-content-md-start
+							.col-sm-11.col-md-6.col-lg-5
+								h3 About our company
+								.title-decor-left Working since 2000
+								p To improve the development phase of oil & gas production, our company uses top-notch engineering solutions.
+								a.button.button-lg.button-width-auto.button-outline.button-default-outline-2.button-winona( href='about-us.html' ) Read more
+							.col-sm-9.col-md-6.col-xl-7
+								// Owl Carousel
+								.owl-style-1
+									.owl-carousel( data-items='1', data-dots='true', data-pagination-class='.dots-custom-3', data-numbering='#owl-numbering-3', data-animation-in='fadeIn', data-animation-out='fadeOut', data-margin='1' )
+										+img( 'index-3-370x436' )
+										+img( 'index-4-370x436' )
+										+img( 'index-1-370x436' )
+										+img( 'index-2-370x436' )
+
+									.dots-custom-wrap
+										.dots-custom-3
+										#owl-numbering-3.owl-numbering
+											.numbering-current
+											.numbering-separator \
+											.numbering-count
+
+					#tabs-6-4.tab-pane.fade
+						.row.row-40.align-items-center.justify-content-center.justify-content-md-start
+							.col-sm-11.col-md-6.col-lg-5
+								h3 About our company
+								.title-decor-left Working since 2005
+								p Blue Energy offers reliable oil & gas supply solutions to clients worldwide to ensure the fastest petroleum shipping.
+								a.button.button-lg.button-width-auto.button-outline.button-default-outline-2.button-winona( href='about-us.html' ) Read more
+							.col-sm-9.col-md-6.col-xl-7
+								// Owl Carousel
+								.owl-style-1
+									.owl-carousel( data-items='1', data-dots='true', data-pagination-class='.dots-custom-4', data-numbering='#owl-numbering-4', data-animation-in='fadeIn', data-animation-out='fadeOut', data-margin='1' )
+										+img( 'index-4-370x436' )
+										+img( 'index-1-370x436' )
+										+img( 'index-2-370x436' )
+										+img( 'index-3-370x436' )
+
+									.dots-custom-wrap
+										.dots-custom-4
+										#owl-numbering-4.owl-numbering
+											.numbering-current
+											.numbering-separator \
+											.numbering-count
+
+
+	// Section Clients
+	+parallax({
+		img: 'bg-clients',
+		innerClass: 'section-xl context-dark'
+	})
+		.container
+			.owl-carousel( data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-xl-items='5', data-margin='30', data-autoplay='true', data-dots='true' )
+				a.clients-modern( href='#' ): +img( 'clients-7-212x130.png' )
+				a.clients-modern( href='#' ): +img( 'clients-8-212x130.png' )
+				a.clients-modern( href='#' ): +img( 'clients-9-212x130.png' )
+				a.clients-modern( href='#' ): +img( 'clients-10-212x130.png' )
+				a.clients-modern( href='#' ): +img( 'clients-11-212x130.png' )
+
+
+	// Our services
+	section.section.section-xl.bg-default.text-center
+		.container
+			.title-group
+				h3.oh: span.d-inline-block.wow.slideInUp( data-wow-delay='0s' ) Our services
+				p.text-width-small.wow.fadeInUp( data-wow-delay='.1s' ) Our company provides first-class petroleum solutions & services for governmental and private organizations worldwide.
+			.row.row-lg.row-40.justify-content-center
+				.col-md-6.col-lg-5.col-xl-4: .oh
+					+services-classic({
+						img: 'services-13-370x274',
+						icon: 'linearicons-ship',
+						title: 'Oil Platforms',
+						text: 'Efficient well drilling'
+					}).wow.slideInLeft( data-wow-delay='0s', data-wow-duration='1s' )
+				.col-md-6.col-lg-5.col-xl-4: .oh
+					+services-classic({
+						img: 'services-14-370x274',
+						icon: 'linearicons-power',
+						title: 'Thermal Power Plants',
+						text: 'Converting heat energy'
+					}).wow.slideInLeft( data-wow-delay='.15s', data-wow-duration='1s' )
+				.col-md-6.col-lg-5.col-xl-4: .oh
+					+services-classic({
+						img: 'services-15-370x274',
+						icon: 'linearicons-factory2',
+						title: 'Oil Refineries',
+						text: 'Transforming crude oil'
+					}).wow.slideInLeft( data-wow-delay='.3s', data-wow-duration='1s' )
+				.col-md-6.col-lg-5.col-xl-4: .oh
+					+services-classic({
+						img: 'services-16-370x274',
+						icon: 'linearicons-fire',
+						title: 'Gas Flares',
+						text: 'Ensuring quality gas processing'
+					}).wow.slideInRight( data-wow-delay='0s', data-wow-duration='1s' )
+				.col-md-6.col-lg-5.col-xl-4: .oh
+					+services-classic({
+						img: 'services-17-370x274',
+						icon: 'linearicons-drop2',
+						title: 'Oil Pumps',
+						text: 'Sustainable oil extraction'
+					}).wow.slideInRight( data-wow-delay='.15s', data-wow-duration='1s' )
+				.col-md-6.col-lg-5.col-xl-4: .oh
+					+services-classic({
+						img: 'services-18-370x274',
+						icon: 'linearicons-sun',
+						title: 'Solar Power Plants',
+						text: 'Green energy solutions'
+					}).wow.slideInRight( data-wow-delay='.3s', data-wow-duration='1s' )
+
+
+	// Section Clients
+	+parallax({
+		img: 'bg-index-1',
+		innerClass: 'section-xl context-dark'
+	})
+		.container
+			h3.oh: span.d-inline-block.wow.slideInUp( data-wow-delay='0s' ) What people say
+			.owl-carousel.owl-style-2( data-items='1', data-lg-items='2', data-xl-items='2', data-margin='30', data-autoplay='true', data-dots='true', data-animation-in='fadeIn', data-animation-out='fadeOut' )
+				+quote-creative({
+					img: 'quote-1-545x365',
+					text: 'We trust Blue Energy on everything connected with gas & petroleum.',
+					author: 'Helen McMillan'
+				})
+				+quote-creative({
+					img: 'quote-2-545x365',
+					text: 'There is incredible peace of mind knowing that you’re in the hands of professionals.',
+					author: 'Sam Williams'
+				})
+				+quote-creative({
+					img: 'quote-3-545x365',
+					text: 'I am glad that we chose Blue Energy as our partner in a new exploration project.',
+					author: 'Ben Fitzgerald'
+				})
+				+quote-creative({
+					img: 'quote-4-545x365',
+					text: 'For any petroleum-related task, Blue Energy is incredibly trustworthy.',
+					author: 'Kate Smith'
+				})
+				+quote-creative({
+					img: 'quote-2-545x365',
+					text: 'There is incredible peace of mind knowing that you’re in the hands of professionals.',
+					author: 'Sam Williams'
+				})
+				+quote-creative({
+					img: 'quote-3-545x365',
+					text: 'I am glad that we chose Blue Energy as our partner in a new exploration project.',
+					author: 'Ben Fitzgerald'
+				})
+
+
+	// Latest news
+	section.section.section-xl.bg-gray-100.text-md-left.section-relative
+		.container: #tabs-7.tabs-custom.row.row-30.align-items-xxl-center.flex-md-row-reverse( data-view-triggerable='true' )
+			.col-md-5.col-lg-4
+				.aside.aside-news
+					.row.row-20.row-md-40.row-xl-90.align-items-center.justify-content-center
+						.aside-item.col-sm-10.col-md-12
+							h3 Latest news
+							ul.nav.list-category
+								li.list-category-item.wow.fadeInRight( role='presentation', data-wow-delay='0s' ): a.active( href='#tabs-7-1', data-toggle='tab' ) Company  news
+								li.list-category-item.wow.fadeInRight( role='presentation', data-wow-delay='.1s' ): a( href='#tabs-7-2', data-toggle='tab' ) News for investors
+								li.list-category-item.wow.fadeInRight( role='presentation', data-wow-delay='.2s' ): a( href='#tabs-7-3', data-toggle='tab' ) Industry news
+						.aside-item.col-sm-6.col-md-12.order-md-1
+							.aside-news-button
+								a.button.button-outline.button-default-outline-2.button-winona.wow.fadeInUp( href='grid-blog.html', data-wow-delay='0s' ) See all news
+								a.button.button-icon.button-icon-left.button-primary.button-winona.wow.fadeInUp( href='#', data-wow-delay='.1s', download )
+									span.icon.mdi.mdi-download
+									span Download report
+						.aside-item.col-sm-6.col-md-12.d-none.d-sm-block
+							.custom-arrows.custom-circle-arrows.active( data-view-trigger='#tabs-7-1' )
+							.custom-arrows-2.custom-circle-arrows( data-view-trigger='#tabs-7-2' )
+							.custom-arrows-3.custom-circle-arrows( data-view-trigger='#tabs-7-3' )
+			.col-md-7.col-lg-8
+				// Tab panes
+				.tab-content
+					#tabs-7-1.tab-pane.fade.show.active
+						.slick-news: .slick-slider( data-autoplay='true', data-loop='true', data-dots='true', data-swipe='true', data-items='1', data-lg-items='2', data-xl-items='2', data-arrows='true', data-vertical='true', data-sm-vertical='true', data-md-vertical='true', data-lg-vertical='true', data-xl-vertical='true', data-arrows-class='.custom-arrows', data-custom-arrows='true' )
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-2-370x365',
+										time: { datetime: '2019-04-25', datetext: 'April 25, 2019' },
+										title: 'Crude Declines as Growth in Shale Production Scares Investors'
+									}).post-classic-2
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-19-370x210',
+										time: { datetime: '2019-04-30', datetext: 'April 30, 2019' },
+										title: 'North Sea Pipeline Resumes After Second Halt in Two Months'
+									})
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-5-370x210',
+										time: { datetime: '2019-06-06', datetext: 'June 06, 2019' },
+										title: 'Overview: Blue Energy Financial Report for Investors'
+									})
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-18-370x365',
+										time: { datetime: '2019-06-06', datetext: 'June 06, 2019' },
+										title: 'Blue Energy Reports 26% Year-on-year Increase in Net Profit for 2019'
+									}).post-classic-2
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-20-370x365',
+										time: { datetime: '2019-04-25', datetext: 'April 25, 2019' },
+										title: 'Design and Advanced Materials As a Driver of Innovation'
+									}).post-classic-2
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-21-370x210',
+										time: { datetime: '2019-04-30', datetext: 'April 30, 2019' },
+										title: 'Time for the Global Gas Industry to Realize its Value, Experts Say'
+									})
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-3-370x210',
+										time: { datetime: '2019-04-05', datetext: 'April 05, 2019' },
+										title: 'America’s Supertanker Terminal Set to Export Oil for First Time'
+									})
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-4-370x365',
+										time: { datetime: '2019-06-11', datetext: 'June 11, 2019' },
+										title: 'Fracking Earthquakes Pop Up In Unexpected Corner of Shale Patch'
+									}).post-classic-2
+
+					#tabs-7-2.tab-pane.fade
+						.slick-news: .slick-slider( data-autoplay='true', data-loop='true', data-dots='true', data-swipe='true', data-items='1', data-lg-items='2', data-xl-items='2', data-arrows='true', data-vertical='true', data-sm-vertical='true', data-md-vertical='true', data-lg-vertical='true', data-xl-vertical='true', data-arrows-class='.custom-arrows-2', data-custom-arrows='true' )
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-3-370x210',
+										time: { datetime: '2019-04-05', datetext: 'April 05, 2019' },
+										title: 'America’s Supertanker Terminal Set to Export Oil for First Time'
+									})
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-4-370x365',
+										time: { datetime: '2019-06-11', datetext: 'June 11, 2019' },
+										title: 'Fracking Earthquakes Pop Up In Unexpected Corner of Shale Patch'
+									}).post-classic-2
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-20-370x365',
+										time: { datetime: '2019-04-25', datetext: 'April 25, 2019' },
+										title: 'Design and Advanced Materials As a Driver of Innovation'
+									}).post-classic-2
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-21-370x210',
+										time: { datetime: '2019-04-30', datetext: 'April 30, 2019' },
+										title: 'Time for the Global Gas Industry to Realize its Value, Experts Say'
+									})
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-5-370x210',
+										time: { datetime: '2019-06-06', datetext: 'June 06, 2019' },
+										title: 'Overview: Blue Energy Financial Report for Investors'
+									})
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-18-370x365',
+										time: { datetime: '2019-06-06', datetext: 'June 06, 2019' },
+										title: 'Blue Energy Reports 26% Year-on-year Increase in Net Profit for 2019'
+									}).post-classic-2
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-2-370x365',
+										time: { datetime: '2019-04-25', datetext: 'April 25, 2019' },
+										title: 'Crude Declines as Growth in Shale Production Scares Investors'
+									}).post-classic-2
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-19-370x210',
+										time: { datetime: '2019-04-30', datetext: 'April 30, 2019' },
+										title: 'North Sea Pipeline Resumes After Second Halt in Two Months'
+									})
+
+					#tabs-7-3.tab-pane.fade
+						.slick-news: .slick-slider( data-autoplay='true', data-loop='true', data-dots='true', data-swipe='true', data-items='1', data-lg-items='2', data-xl-items='2', data-arrows='true', data-vertical='true', data-sm-vertical='true', data-md-vertical='true', data-lg-vertical='true', data-xl-vertical='true', data-arrows-class='.custom-arrows-3', data-custom-arrows='true' )
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-18-370x365',
+										time: { datetime: '2019-06-06', datetext: 'June 06, 2019' },
+										title: 'Blue Energy Reports 26% Year-on-year Increase in Net Profit for 2019'
+									}).post-classic-2
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-5-370x210',
+										time: { datetime: '2019-06-06', datetext: 'June 06, 2019' },
+										title: 'Overview: Blue Energy Financial Report for Investors'
+									})
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-21-370x210',
+										time: { datetime: '2019-04-30', datetext: 'April 30, 2019' },
+										title: 'Time for the Global Gas Industry to Realize its Value, Experts Say'
+									})
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-20-370x365',
+										time: { datetime: '2019-04-25', datetext: 'April 25, 2019' },
+										title: 'Design and Advanced Materials As a Driver of Innovation'
+									}).post-classic-2
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-19-370x210',
+										time: { datetime: '2019-04-30', datetext: 'April 30, 2019' },
+										title: 'North Sea Pipeline Resumes After Second Halt in Two Months'
+									})
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-2-370x365',
+										time: { datetime: '2019-04-25', datetext: 'April 25, 2019' },
+										title: 'Crude Declines as Growth in Shale Production Scares Investors'
+									}).post-classic-2
+							.item: .row.row-30.justify-content-center
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-4-370x365',
+										time: { datetime: '2019-06-11', datetext: 'June 11, 2019' },
+										title: 'Fracking Earthquakes Pop Up In Unexpected Corner of Shale Patch'
+									}).post-classic-2
+								.col-sm-6.col-md-10.col-lg-6
+									+post-classic({
+										img: 'post-3-370x210',
+										time: { datetime: '2019-04-05', datetext: 'April 05, 2019' },
+										title: 'America’s Supertanker Terminal Set to Export Oil for First Time'
+									})
+
+		.bg-image-right-2.bg-image-right-md
+
+
+	// We are focused on results
+	+parallax({
+		img: 'bg-icon-1',
+		innerClass: 'section-lg context-dark text-md-left'
+	})
+		.container
+			h4.font-weight-light We are focused on results
+			p.big.text-spacing-75.text-white-06 Our company’s share in the nation’s oil and gas condensate production is 68%
+			.row.row-lg.row-30
+				.col-sm-6.col-md-5.col-lg-3.wow.fadeInRight( data-wow-delay='0s' )
+					+box-icon-creative({
+						icon: 'linearicons-trophy2',
+						title: 'The largest oil producer'
+					})
+				.col-sm-6.col-md-5.col-lg-3.wow.fadeInRight( data-wow-delay='.1s' )
+					+box-icon-creative({
+						icon: 'linearicons-flag',
+						title: '460 drilling rigs worldwide'
+					})
+				.col-sm-6.col-md-5.col-lg-3.wow.fadeInRight( data-wow-delay='.2s' )
+					+box-icon-creative({
+						icon: 'linearicons-gas',
+						title: '2400 petrol stations'
+					})
+				.col-sm-6.col-md-5.col-lg-3.wow.fadeInRight( data-wow-delay='.3s' )
+					+box-icon-creative({
+						icon: 'linearicons-medal-empty icon-big',
+						title: 'ISO 9001:2008 Certified'
+					})
+
+
+	// Our Team
+	section.section.section-xl.bg-default.text-md-left
+		.container
+			.row.row-50.justify-content-center.justify-content-md-start
+				.col-lg-8.wow.fadeInLeft( data-wow-delay='.1s' )
+					h3 Our Team
+					.slick-team
+						// Slick Carousel
+						.slick-slider.carousel-parent( data-autoplay='true', data-swipe='true', data-items='1', data-child='#child-carousel', data-for='#child-carousel', data-slide-effect='true' )
+							.item
+								+team-creative({
+									img: 'team-9-270x367',
+									name: 'Stuart Williams',
+									status: 'President, CEO',
+									text: 'Stuart Williams was elected Chief Executive Officer of Blue Energy in 2013. He joined us in 2001 as Drilling Manager in Kuala Lumpur, Malaysia where he received various promotions.'
+								})
+							.item
+								+team-creative({
+									img: 'team-10-270x367',
+									name: 'Sam Peterson',
+									status: 'Executive Vice President, Offshore',
+									text: 'Sam Peterson serves as Executive Vice President, Offshore for our company. He joined Blue Energy in 2001 and has held roles with increasing responsibility abroad and domestically.'
+								})
+							.item
+								+team-creative({
+									img: 'team-11-270x367',
+									name: 'Jane McMillan',
+									status: 'Senior Vice President, Administration',
+									text: 'Jane McMillan is Senior Vice President of Administration at Blue Energy.  She joined us in 1993 as an Associate Accountant and subsequently received various promotions over the years.'
+								})
+							.item
+								+team-creative({
+									img: 'team-12-270x367',
+									name: 'Peter Smith',
+									status: 'Vice President, Tax',
+									text: 'Peter Smith is the Vice President and leading tax specialist at Blue Energy.  He joined us as in 2007 at the Company’s office in Miami. Peter has unmatched expertise in tax planning & management.'
+								})
+							.item
+								+team-creative({
+									img: 'team-26-270x367',
+									name: 'Will McMillan',
+									status: 'Finance Director',
+									text: 'With nearly a decade of corporate finance and transactions experience focused on the E&P sector, Will brings extensive experience and expertise in valuation and financial analysis to Blue Energy.'
+								})
+						.child-team-carousel
+							.slick-slider.child-carousel#child-carousel( data-arrows='true', data-for='.carousel-parent', data-items='3', data-sm-items='4', data-md-items='4', data-lg-items='3', data-xl-items='4' )
+								.item: +img( 'team-13-80x78' )
+								.item: +img( 'team-14-80x78' )
+								.item: +img( 'team-15-80x78' )
+								.item: +img( 'team-16-80x78' )
+								.item: +img( 'team-30-80x78' )
+
+				.col-sm-8.col-md-6.col-lg-4.wow.fadeInLeft( data-wow-delay='0s' ): .offset-left-xl-40
+					h3 Contacts
+					.box-contacts-wrap
+						p.box-contacts-text Please don’t hesitate to get in touch regarding any questions.
+						include ../sections/_box-contacts
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

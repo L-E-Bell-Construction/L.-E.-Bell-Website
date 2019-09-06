@@ -1,0 +1,67 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_thumbnail
+
+block variables
+	-
+		var
+			activeCategory = 'projects',
+			pageName = 'Projects';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-project'
+	})
+
+	// Services 2
+	section.section.section-lg.bg-default
+		.container.isotope-wrap
+			.isotope-filters.isotope-filters-horizontal
+				//- Isotope Filters
+				button.isotope-filters-toggle.button.button-sm.button-icon.button-icon-right.button-gray-3( data-custom-toggle='.projects-filters-list', data-custom-toggle-disable-on-blur='true', data-custom-toggle-hide-on-blur='true' )
+					span.icon.mdi.mdi-chevron-down
+					| Filter
+				ul.isotope-filters-list.projects-filters-list
+					li: a.active( href='#', data-isotope-filter='*' ) All
+					li: a( href='#', data-isotope-filter='Type 1' ) Reconstruction
+					li: a( href='#', data-isotope-filter='Type 2' ) Architectural Design
+			.row.isotope( data-lightgallery='group' )
+				.col-md-6.isotope-item( data-filter='Type 2' )
+					+thumbnail-classic({
+						img: 'project-1-570x299',
+						imgOriginal: 'project-1-1200x800-original',
+						title: 'Smith office center'
+					}).block-lg
+				.col-md-6.isotope-item( data-filter='Type 1' )
+					+thumbnail-classic({
+						img: 'project-2-570x299',
+						imgOriginal: 'project-2-1200x800-original',
+						title: 'STC conference hall'
+					}).block-lg
+				.col-md-6.isotope-item( data-filter='Type 2' )
+					+thumbnail-classic({
+						img: 'project-3-570x299',
+						imgOriginal: 'project-3-1200x800-original',
+						title: 'Pace hotel'
+					}).block-lg
+				.col-md-6.isotope-item( data-filter='Type 1' )
+					+thumbnail-classic({
+						img: 'project-4-570x299',
+						imgOriginal: 'project-4-1200x800-original',
+						title: 'seattle community center'
+					}).block-lg
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

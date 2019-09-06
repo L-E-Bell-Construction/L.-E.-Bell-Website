@@ -1,0 +1,446 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-modern
+include ../sections/_footer-classic
+include ../components/_thumbnail
+include ../components/_box-icon
+include ../components/_box-info
+include ../components/_box-services
+include ../components/_box-project
+include ../components/_quote
+include ../components/_counters
+include ../components/_box-team
+
+block variables
+	-
+		var
+			pageName = 'Mining',
+			style = '1';
+
+		logo = {
+			default: 'logo-default-1-407x102.png',
+			inverse: 'logo-inverse-1-407x102.png',
+			name: 'Minerals'
+		};
+
+block page
+	// Page Header
+	+navbar-modern
+		.col-6
+			+thumbnail-creative({
+				img: 'mining/project-1-195x164',
+				imgOriginal: 'mining/project-1-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'mining/project-2-195x164',
+				imgOriginal: 'mining/project-2-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'mining/project-3-195x164',
+				imgOriginal: 'mining/project-3-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'mining/project-4-195x164',
+				imgOriginal: 'mining/project-4-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'mining/project-5-195x164',
+				imgOriginal: 'mining/project-5-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'mining/project-6-195x164',
+				imgOriginal: 'mining/project-6-1200x800-original'
+			})
+
+	// Swiper
+	include ../sections/_section-slider-1
+
+	// About Company
+	section#about.section.section-md.section-lg-0.bg-gray-100.text-md-left.section-relative
+		#tabs-8.tabs-custom.container: .row.row-40.flex-lg-row-reverse
+			.col-lg-4
+				.nav-tabs-2-button
+					h5.nav-tabs-2-title About Company
+					span.icon.mdi.mdi-arrow-down( data-custom-scroll-to='about' )
+				ul.nav.nav-tabs-2
+					li.nav-item-2.wow.fadeInRight( role='presentation' ): a.active( href='#tabs-8-1', data-toggle='tab' ) Company values
+					li.nav-item-2.wow.fadeInRight( role='presentation' ): a( href='#tabs-8-2', data-toggle='tab' ) Our Mission
+					li.nav-item-2.wow.fadeInRight( role='presentation' ): a( href='#tabs-8-3', data-toggle='tab' ) Our Vision
+					li.nav-item-2.wow.fadeInRight( role='presentation' ): a( href='#tabs-8-4', data-toggle='tab' ) View report
+			.col-lg-8.tab-content-2.wow.fadeInLeft: .tab-content
+				#tabs-8-1.tab-pane.fade.show.active
+					.row.row-40.row-lg-50.row-xl-60
+						.col-sm-6
+							+box-icon-classic({
+								unit: 'flex-column text-center flex-md-row text-md-left',
+								icon: 'linearicons-hammer-wrench',
+								title: 'Integrity',
+								text: 'We have an uncompromising commitment to ethics and zero harm. We care about everyone.'
+							})
+						.col-sm-6
+							+box-icon-classic({
+								unit: 'flex-column text-center flex-md-row text-md-left',
+								icon: 'linearicons-map-marker-check',
+								title: 'Respect',
+								text: 'We hold each other, our customers, and the industries we serve in the highest regard.'
+							})
+						.col-sm-6
+							+box-icon-classic({
+								unit: 'flex-column text-center flex-md-row text-md-left',
+								icon: 'linearicons-users2',
+								title: 'Teamwork',
+								text: 'We work together to achieve results and to solve your toughest challenges.'
+							})
+						.col-sm-6
+							+box-icon-classic({
+								unit: 'flex-column text-center flex-md-row text-md-left',
+								icon: 'linearicons-leaf',
+								title: 'Diversity',
+								text: 'We appreciate our differences and embrace a broad range of perspectives and cultures.'
+							})
+				#tabs-8-2.tab-pane.fade
+					+box-info({
+						img: 'mining/about-1-326x390',
+						title: 'Our Mission',
+						text: 'We are a responsible mining corporation that discovers and processes minerals and energy resources for the use of society. Our company partners directly with customers to enable them to achieve zero harm, the highest production, and the lowest lifecycle cost for their mining operations, while making every customer a reference.'
+					})
+				#tabs-8-3.tab-pane.fade
+					+box-info({
+						img: 'mining/about-2-326x390',
+						title: 'Our Vision',
+						text: 'Our vision is to be a highly respected, world-class natural-resource company committed to deliver excellent value to its investors, employees, and other stakeholders. We aspire to be a world-class service company delivering the most reliable and efficient products, systems, and solutions that solve the toughest mining challenges.'
+					})
+				#tabs-8-4.tab-pane.fade
+					+box-info({
+						img: 'mining/about-3-326x390',
+						title: '2019 Annual Report',
+						text: 'We began this year with a celebration of our 50 years in business, a milestone that is particularly significant for a mining company. We ended the year strongly with the most silver production and the highest revenue in our company’s history. The 17.2 million ounces of silver we produced marked our third year of record-breaking production.'
+					})
+
+
+	// What we offer
+	section.section.section-lg.bg-default
+		.container
+			h3.oh-desktop: span.d-inline-block.wow.slideInDown What we offer
+			.owl-carousel.owl-style-3.dots-style-2( data-items='1', data-sm-items='2', data-lg-items='3', data-margin='30', data-autoplay='true', data-dots='true', data-animation-in='fadeIn', data-animation-out='fadeOut' )
+				+services-creative({
+					img: 'mining/services-1-370x230',
+					title: 'Mineral Production',
+					text: 'We explore, develop, and produce various minerals at mines all over the world.',
+					number: '01'
+				})
+				+services-creative({
+					img: 'mining/services-2-370x230',
+					title: 'Coal Mining',
+					text: 'Our company is one of the most reliable providers of coal mining services.',
+					number: '02'
+				})
+				+services-creative({
+					img: 'mining/services-3-370x230',
+					title: 'Mining Equipment',
+					text: 'We offer a wide variety of professional mining equipment and machinery.',
+					number: '03'
+				})
+				+services-creative({
+					img: 'services-7-370x230',
+					title: 'Experienced Team',
+					text: 'We employ the best industry experts who help us provide unique mining solutions.',
+					number: '04'
+				})
+				+services-creative({
+					img: 'services-19-370x230',
+					title: 'Modern Technology',
+					text: 'Our company uses top-notch technology to make mining safer and more productive.',
+					number: '05'
+				})
+				+services-creative({
+					img: 'services-20-370x230',
+					title: 'Quality Materials',
+					text: 'High-quality materials we use are the absolute guarantee of our customers’ satisfaction.',
+					number: '06'
+				})
+
+
+	// Section CTA
+	+parallax({
+		img: 'bg-cta',
+		innerClass: 'section-lg context-dark text-md-left'
+	})
+		.container: .row.justify-content-end: .col-sm-7.col-md-6.col-lg-5
+			.cta-classic
+				h4.cta-classic-title.wow.fadeInLeft Use our expertise to find the right  solutions
+				p.cta-classic-text.wow.fadeInRight( data-wow-delay='.1s' ) Efficient mining solutions for companies worldwide
+				a.button.button-lg.button-secondary.button-winona.wow.fadeInUp( href= links.services, data-wow-delay='.2s' ) Our services
+
+
+	// Mining machinery
+	section.section.section-xl.bg-default.text-center
+		.container
+			h3.oh-desktop: span.d-inline-block.wow.slideInUp Mining machinery
+		.container-fluid.container-inset-0
+			.row.row-30.row-desktop-8.gutters-8.hoverdir( data-lightgallery='group' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'mining/grid-gallery-1-474x355',
+						imgOriginal: 'mining/grid-gallery-1-1200x800-original',
+						title: 'Graders',
+						badge: '$90\\hour'
+					}).block-1.wow.slideInUp.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'mining/grid-gallery-2-474x355',
+						imgOriginal: 'mining/grid-gallery-2-1200x800-original',
+						title: 'Bulldozers',
+						badge: '$95\\hour'
+					}).block-1.wow.slideInDown.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'mining/grid-gallery-3-474x355',
+						imgOriginal: 'mining/grid-gallery-3-1200x800-original',
+						title: 'Mini-loaders',
+						badge: '$92\\hour'
+					}).block-1.wow.slideInUp.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'mining/grid-gallery-4-474x355',
+						imgOriginal: 'mining/grid-gallery-4-1200x800-original',
+						title: 'Backhoes',
+						badge: '$99\\hour'
+					}).block-1.wow.slideInDown.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'mining/grid-gallery-5-474x355',
+						imgOriginal: 'mining/grid-gallery-5-1200x800-original',
+						title: 'Earth moving equipment',
+						badge: '$89\\hour'
+					}).block-1.wow.slideInDown.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'mining/grid-gallery-6-474x355',
+						imgOriginal: 'mining/grid-gallery-6-1200x800-original',
+						title: 'Excavators',
+						badge: '$85\\hour'
+					}).block-1.wow.slideInUp.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'mining/grid-gallery-7-474x355',
+						imgOriginal: 'mining/grid-gallery-7-1200x800-original',
+						title: 'Bucket-wheel excavators',
+						badge: '$94\\hour'
+					}).block-1.wow.slideInDown.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3: .oh-desktop
+					+thumbnail-modern({
+						img: 'mining/grid-gallery-8-474x355',
+						imgOriginal: 'mining/grid-gallery-8-1200x800-original',
+						title: 'Heavy Mining Equipment',
+						badge: '$97\\hour'
+					}).block-1.wow.slideInUp.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+
+
+	// Latest Project
+	section.section.section-inset-8.bg-image-5.context-dark.text-center
+		.container
+			h3.oh-desktop: span.d-inline-block.wow.slideInDown Latest projects
+			.owl-style-4: .owl-carousel.dots-style-2( data-items='1', data-md-items='2', data-margin='30', data-md-margin='0', data-nav='true', data-dots='true', data-smart-speed='400', data-autoplay='true' )
+				+project-classic({
+					img: 'mining/project-7-570x370',
+					title: 'Dickinson Iron Ore Mine Engineering, Procurement, and Equipment Setup',
+					location: 'North Dakota',
+					text: 'This project included improvements that allowed the mine to process better ore with more fines.'
+				})
+				+project-classic({
+					img: 'mining/project-8-570x370',
+					title: 'Midland Phosphate Mine: Mining Machinery & Additional Services',
+					location: 'Texas',
+					text: 'We are providing this mine with some heavy machinery and contract mining services.'
+				})
+				+project-classic({
+					img: 'mining/project-9-570x370',
+					title: 'Dickinson Iron Ore Mine Engineering, Procurement, and Equipment Setup',
+					location: 'North Dakota',
+					text: 'This project included improvements that allowed the mine to process better ore with more fines.'
+				})
+				+project-classic({
+					img: 'mining/project-10-570x370',
+					title: 'Midland Phosphate Mine: Mining Machinery & Additional Services',
+					location: 'Texas',
+					text: 'We are providing this mine with some heavy machinery and contract mining services.'
+				})
+
+
+	// Section
+	section.section.section-xl.bg-gray-100.text-md-left
+		.container: .row.row-60.justify-content-center.flex-lg-row-reverse
+			.col-md-8.col-lg-6.col-xl-5: .offset-left-xl-70
+				h3.oh-desktop: span.d-inline-block.wow.slideInLeft Our clients
+				.slick-quote
+					// Slick Carousel
+					.slick-slider.carousel-parent( data-autoplay='true', data-swipe='true', data-items='1', data-child='#child-carousel-2', data-for='#child-carousel-2', data-slide-effect='true' )
+						.item
+							+quote-modern({
+								text: 'Minerals provided us with timely and efficient service. They showed a willingness throughout the process and solved all mining-related issues.',
+								author: 'Stephen Adams',
+								status: '“AlphaIndustry”, CEO'
+							})
+						.item
+							+quote-modern({
+								text: 'Their team helped us a lot during a complex process of finding candidates for a new department that opened at our iron ore plant this year.',
+								author: 'Sam Peterson',
+								status: '“South East Plant”, Lead HR Manager'
+							})
+						.item
+							+quote-modern({
+								text: 'It has been a pleasure to work with your team. You are a trusted partner in coal exploration, development, and further processing.',
+								author: 'Jane McMillan',
+								status: '“West Coal Plant”, CFO'
+							})
+						.item
+							+quote-modern({
+								text: 'Your help with our recent project was invaluable! Your sales team did a great work in organization of diamond supply process and we appreciate it a lot.',
+								author: 'Will Jones',
+								status: '“STC Diamond Mine”, Sales Manager'
+							})
+					.slick-slider.child-carousel#child-carousel-2( data-arrows='true', data-for='.carousel-parent', data-items='4', data-sm-items='4', data-md-items='4', data-lg-items='4', data-xl-items='4', data-slide-to-scroll='1' )
+						.item: +img( 'team-5-83x83' ).img-circle
+						.item: +img( 'team-6-83x83' ).img-circle
+						.item: +img( 'team-7-83x83' ).img-circle
+						.item: +img( 'team-8-83x83' ).img-circle
+			.col-lg-6.col-xl-7
+				include ../sections/_clients-classic
+
+
+	+parallax({
+		img: 'bg-counter-3',
+		innerClass: 'section-inset-9 context-dark'
+	})
+		.container: .row.row-30.justify-content-center.justify-content-xl-between.align-items-lg-end
+			.col-sm-6.col-md-3
+				+counter-classic({
+					number: '640',
+					title: 'projects'
+				})
+			.col-sm-6.col-md-3
+				+counter-classic({
+					number: '15',
+					title: 'awards won'
+				})
+			.col-sm-6.col-md-3
+				+counter-classic({
+					number: '24',
+					title: 'partners'
+				})
+			.col-sm-6.col-md-3
+				+counter-classic({
+					number: '15',
+					title: 'new clients'
+				})
+
+
+	// Section
+	section.section.section-xl.bg-default.text-md-left
+		.container: .row.row-30
+			.col-md-5.col-lg-4.col-xl-3: .box-team
+				h3.oh-desktop: span.d-inline-block.wow.slideInUp Our team
+				h6.title-style-1.wow.fadeInLeft( data-wow-delay='.1s' ) Professional mining management
+				p.wow.fadeInRight( data-wow-delay='.2s' ) Minerals is a team of dedicated mining professionals with more than 20 years of experience.
+				.group-sm.oh-desktop
+					.button-style-1.wow.slideInLeft
+						span.icon.mdi.mdi-email-outline
+						span.button-style-1-text: a( href='contacts.html' ) Contact us
+					div.wow.slideInRight: #owl-custom-nav-1.owl-custom-nav
+			.col-md-7.col-lg-8.col-xl-9
+				.owl-carousel.owl-style-5( data-items='1', data-sm-items='2', data-lg-items='3', data-margin='30', data-autoplay='false', data-animation-in='fadeIn', data-animation-out='fadeOut', data-navigation-class='#owl-custom-nav-1' )
+					+team-modern({
+						img: 'team-18-270x236',
+						name: 'Frank McMillan',
+						status: 'CEO, Managing Director'
+					})
+					+team-modern({
+						img: 'team-19-270x236',
+						name: 'John Smith',
+						status: 'Head of Geology'
+					})
+					+team-modern({
+						img: 'team-3-270x236',
+						name: 'Ben Wilson',
+						status: 'Head of Projects Engineering'
+					})
+					+team-modern({
+						img: 'team-20-270x236',
+						name: 'Ben Fitzgerald',
+						status: 'Engineer'
+					})
+					+team-modern({
+						img: 'team-21-270x236',
+						name: 'John Tuff',
+						status: 'Top Manager'
+					})
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-parallax-newsletter
+
+
+	// Latest news
+	section.section.section-xl.bg-default.text-md-left
+		.container
+			#tabs-9.tabs-custom.tabs-post: .row.align-items-md-end.align-items-xl-start
+				.col-md-6.tab-content-3.wow.fadeInUp: .tab-content
+					#tabs-9-1.tab-pane.fade.show.active
+						.post-amy-figure
+							+img( 'mining/post-1-570x505' )
+							a( href= links.post ): span.icon.linearicons-link2
+					#tabs-9-2.tab-pane.fade
+						.post-amy-figure
+							+img( 'mining/post-2-570x505' )
+							a( href= links.post ): span.icon.linearicons-link2
+					#tabs-9-3.tab-pane.fade
+						.post-amy-figure
+							+img( 'mining/post-3-570x505' )
+							a( href= links.post ): span.icon.linearicons-link2
+
+				.col-md-6.index-1
+					h3.tabs-post-title.oh-desktop: span.d-inline-block.wow.slideInDown Latest news
+					ul.nav.nav-tabs
+						li.nav-item.wow.fadeInRight( role='presentation' )
+							a.nav-link.active( href='#tabs-9-1', data-toggle='tab' )
+							.post-amy
+								h5.post-amy-title: a( href= links.post ) Global Thermal Coal Market to Grow 5% in 2019
+								ul.post-amy-info.list-inline
+									li.post-amy-time
+										span.icon.mdi.mdi-clock
+										time( datetime='2019-05-26' ) May 26, 2019
+									li.post-amy-autor
+										span.icon.mdi.mdi-account-outline
+										a( href='#' ) Jane Williams
+						li.nav-item.wow.fadeInRight( role='presentation' )
+							a.nav-link( href='#tabs-9-2', data-toggle='tab' )
+							.post-amy
+								h5.post-amy-title: a( href= links.post ) Mt Ridley Acquires Philippines Epithermal Gold Project
+								ul.post-amy-info.list-inline
+									li.post-amy-time
+										span.icon.mdi.mdi-clock
+										time( datetime='2019-05-26' ) May 26, 2019
+									li.post-amy-autor
+										span.icon.mdi.mdi-account-outline
+										a( href='#' ) Jane Williams
+						li.nav-item.wow.fadeInRight( role='presentation' )
+							a.nav-link( href='#tabs-9-3', data-toggle='tab' )
+							.post-amy
+								h5.post-amy-title: a( href= links.post ) Mining-specific Staff Recruitment & Management App Developed
+								ul.post-amy-info.list-inline
+									li.post-amy-time
+										span.icon.mdi.mdi-clock
+										time( datetime='2019-05-26' ) May 26, 2019
+									li.post-amy-autor
+										span.icon.mdi.mdi-account-outline
+										a( href='#' ) Jane Williams
+
+	// Page Footer
+	+footer-classic.footer-classic-2

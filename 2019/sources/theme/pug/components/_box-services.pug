@@ -1,0 +1,46 @@
+//- Services
+
+mixin services-classic( obj )
+	// Services Classic
+	article.services-classic&attributes( attributes )
+		a.services-classic-figure( href= links.singleService ): +img( obj.img )
+		.services-classic-caption
+			.unit.align-items-lg-center
+				.unit-left
+					span.services-classic-icon( class= obj.icon )
+				.unit-body
+					h5.services-classic-title: a( href= links.singleService )= obj.title
+					p.services-classic-text= obj.text
+
+mixin services-creative( obj )
+	// Services Creative
+	article.services-creative&attributes( attributes )
+		a.services-creative-figure( href= links.singleService ): +img( obj.img )
+		.services-creative-caption
+			h5.services-creative-title: a( href= links.singleService )= obj.title
+			p.services-creative-text= obj.text
+			span.services-creative-counter.box-ordered-item= obj.number ? obj.number : ''
+
+mixin services-tammy( obj )
+	// Services Tammy
+	article.services-tammy&attributes( attributes )
+		span.services-tammy-counter.box-ordered-item= obj.number ? obj.number : ''
+		.services-tammy-caption
+			h5.services-tammy-title: a( href= links.singleService )= obj.title
+			a.services-tammy-figure( href= links.singleService ): +img( obj.img )
+			a.services-tammy-link( href= links.singleService ) Read More
+
+mixin services-rose( obj )
+	// Services Rose
+	article.services-rose&attributes( attributes )
+		.services-rose-caption
+			+img( obj.img )
+			p.services-rose-title: a( href= links.singleService )!= obj.title
+
+mixin services-terri( obj )
+	// Services Terri
+	article.services-terri&attributes( attributes )
+		.services-terri-figure: +img( obj.img )
+		.services-terri-caption
+			span.services-terri-icon( class= obj.icon )
+			h5.services-terri-title: a( href= links.singleService )= obj.title

@@ -1,0 +1,71 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_box-services
+
+block variables
+	-
+		var
+			activeCategory = 'pages',
+			pageName = 'Services #4';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-services'
+	})
+
+	// Services 2
+	section.section.section-lg.bg-default
+		.container
+			.row.row-40.row-xl-60.justify-content-center.box-ordered
+				.col-sm-6.col-lg-4
+					+services-creative({
+						img: 'services-7-370x230',
+						title: 'Architectural Design',
+						text: 'Cadunt patienter ducunt ad secundus quadra. Detrius de placidus fuga, demitto'
+					})
+				.col-sm-6.col-lg-4
+					+services-creative({
+						img: 'services-8-370x230',
+						title: 'Construction',
+						text: 'Cum absolutio crescere, omnes tuses anhelare gratis, grandis gabaliumes.'
+					})
+				.col-sm-6.col-lg-4
+					+services-creative({
+						img: 'services-9-370x230',
+						title: 'Quality Control',
+						text: 'Primus, brevis pulchritudines acceleratrix talem de fortis, raptus hippotoxota.'
+					})
+				.col-sm-6.col-lg-4
+					+services-creative({
+						img: 'services-10-370x230',
+						title: 'Equipment Rental',
+						text: 'Neuter, placidus musas interdum experientia de magnum, flavum cobaltum.'
+					})
+				.col-sm-6.col-lg-4
+					+services-creative({
+						img: 'services-11-370x230',
+						title: 'Green Energy',
+						text: 'Cum armarium manducare, omnes exemplares resus primus, peritus magister.'
+					})
+				.col-sm-6.col-lg-4
+					+services-creative({
+						img: 'services-12-370x230',
+						title: 'General Contracting',
+						text: 'Alter, noster compaters unus promissio de placidus, teres hippotoxota.'
+					})
+
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

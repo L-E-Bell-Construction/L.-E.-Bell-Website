@@ -1,0 +1,39 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+
+block variables
+	-
+		var
+			activeCategory = 'shop',
+			pageName = 'Cart Page';
+
+block page
+
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-shop'
+	})
+
+	// Shopping Cart
+	section.section.section-lg.bg-default
+		.container
+			include ../sections/_shopping-cart
+			.group-xxxl.group-middle.justify-content-md-end
+				div: .group-xxl.group-middle
+					p.big.text-gray-500 Total
+					h4.text-spacing-75 $700
+				a.button.button-lg.button-width-240.button-primary.button-winona( href='checkout.html' ) Checkout
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic
