@@ -1,0 +1,140 @@
+/*
+* Backgrounds
+*/
+
+.context-dark {
+	@extend %context-dark;
+}
+
+%context-dark {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: none;
+		}
+
+		.brand-logo-light {
+			display: block;
+		}
+	}
+}
+
+%context-light {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: block;
+		}
+
+		.brand-logo-light {
+			display: none;
+		}
+	}
+}
+
+/*
+* Light Backgrounds
+*/
+.bg-default {
+	@include bg-behaviour($body-bg);
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+/*
+* Dark Backgrounds
+*/
+.bg-gray-700 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+}
+
+/*
+* Accent Backgrounds
+*/
+.bg-primary {
+	@extend %context-dark;
+	& + & {
+		padding-top: 0;
+	}
+}
+
+/*
+* Background Image
+*/
+.bg-image {
+
+}
+
+[class^='bg-'] {
+	background-size: cover;
+	background-position: center center;
+}
+
+// Desktop only
+//
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+
+
+
+/*
+// Background Custom
+*/
+
+.bg-image-right {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 9%;
+	border-bottom-left-radius: 90px;
+	background-image: url(../images/bg-index-3.jpg);
+	z-index: -2;
+}
+
+.bg-image-left {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	bottom: 10%;
+	right: 10%;
+	border-bottom-right-radius: 90px;
+	background-image: url(../images/bg-index-2.jpg);
+	z-index: -1;
+}
+
+// Medium ≥576px
+@include media-breakpoint-up(sm) {
+	.bg-image-right {
+		border-radius: 0 0 90px 90px;
+	}
+
+	.bg-image-left {
+		right: 40%;
+	}
+}
+
+// Medium ≥768px
+@include media-breakpoint-up(md) {
+	.bg-image-left {
+		right: calc(50% - 30px);
+	}
+}
+
+
+@include media-breakpoint-up(lg) {
+	.bg-image-left {
+		bottom: 14%;
+		right: calc(50% + 15px);
+	}
+}
