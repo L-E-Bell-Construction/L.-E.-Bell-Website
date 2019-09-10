@@ -1,0 +1,76 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_box-services
+
+block variables
+	-
+		var
+			activeCategory = 'pages',
+			pageName = 'Services #2';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-services'
+	})
+
+	// Services 2
+	section.section.section-lg.bg-default
+		.container
+			.row.row-40.justify-content-center
+				.col-md-6.col-lg-5.col-xl-4
+					+services-classic({
+						img: 'services-1-370x274',
+						icon: 'linearicons-pencil-ruler icon-52',
+						title: 'Architectural Design',
+						text: 'Designing buildings of all kinds'
+					})
+				.col-md-6.col-lg-5.col-xl-4
+					+services-classic({
+						img: 'services-2-370x274',
+						icon: 'linearicons-hammer-wrench',
+						title: 'Construction',
+						text: 'Professional construction services'
+					})
+				.col-md-6.col-lg-5.col-xl-4
+					+services-classic({
+						img: 'services-3-370x274',
+						icon: 'linearicons-license2 icon-53',
+						title: 'Quality Control',
+						text: 'Ensuring the best quality'
+					})
+				.col-md-6.col-lg-5.col-xl-4
+					+services-classic({
+						img: 'services-4-370x274',
+						icon: 'linearicons-cog icon-53',
+						title: 'Equipment Rental',
+						text: 'Any equipment for your needs'
+					})
+				.col-md-6.col-lg-5.col-xl-4
+					+services-classic({
+						img: 'services-5-370x274',
+						icon: 'linearicons-sun icon-54',
+						title: 'Green Energy',
+						text: 'Top-notch solar energy solutions'
+					})
+				.col-md-6.col-lg-5.col-xl-4
+					+services-classic({
+						img: 'services-6-370x274',
+						icon: 'linearicons-intersect',
+						title: 'General Contracting',
+						text: 'Reliable general contractors'
+					})
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

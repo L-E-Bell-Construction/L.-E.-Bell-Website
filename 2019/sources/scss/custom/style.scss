@@ -1,0 +1,43 @@
+/**
+ * [Table of contents]
+ */
+
+// Main styles
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "variables";
+@import "mixins";
+@import "reset";
+
+/** @group Components */
+@import "components/type";
+@import "components/brand";
+@import "components/links";
+@import "components/blocks";
+@import "components/boxes";
+@import "components/groups";
+@import "components/units";
+@import "components/lists";
+@import "components/images";
+@import "components/icons";
+@import "components/dividers";
+@import "components/buttons";
+@import "components/footers";
+
+/** @group Helpers */
+@import "helpers/page-layout";
+@import "helpers/text-styling";
+@import "helpers/offsets";
+@import "helpers/sections";
+@import "helpers/grid-modules";
+@import "helpers/backgrounds";
+@import "helpers/utilities";
+
+/** @group Plugins */
+@import "plugins/animate";
+@import "plugins/preloader";
+@import "plugins/ui-to-top";
+@import "plugins/isotope";
+@import "plugins/owl-carousel";
+@import "plugins/material-parallax";

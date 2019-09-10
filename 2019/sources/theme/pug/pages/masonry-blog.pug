@@ -1,0 +1,81 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_posts
+include ../components/_pagination
+
+block variables
+	-
+		var
+			activeCategory = 'blog',
+			pageName = 'Masonry blog';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-blog'
+	})
+
+	hr.hr-gray-1
+	// Grid Blog
+	section.section.section-lg.bg-gray-7
+		.container
+			.row.row-30.justify-content-center
+				.col-md-10.col-lg-6
+					.row.row-30
+						.col-12
+							+post-modern-big({
+								img: 'post-7-570x528',
+								title: 'North Sea Pipeline Resumes After Second Halt',
+								video: 'https://www.youtube.com/watch?v=1UWpbtUupQQ'
+							}).post-modern-3.block-3
+						.col-sm-6
+							+post-modern({
+								title: 'Time for Gas Industry to Realize Its Extensive Value'
+							}).post-modern-quote.block-3
+						.col-sm-6
+							+post-modern({
+								img: 'post-8-270x247',
+								title: 'Oil Prices: Here Come The Bulls'
+							}).post-modern-2.block-3
+						.col-12
+							+post-modern-horizontal({
+								img: 'post-9-195x191',
+								title: 'Growth in Shale Production Scares Investors'
+							}).post-modern-4.block-3
+				.col-md-10.col-lg-6
+					.row.row-30
+						.col-sm-6
+							+post-modern({
+								img: 'post-10-270x247',
+								title: 'US Crude Stocks Up 1.8 Million bbl'
+							}).post-modern-2.block-3
+						.col-sm-6
+							+post-modern({
+								title: 'Blue Energy Signals U.S. Oil Drilling Revival'
+							}).block-3
+						.col-12
+							+post-modern-horizontal({
+								img: 'post-11-195x191',
+								title: 'Solving industrial problems in 2019'
+							}).post-modern-4.block-3
+						.col-12
+							+post-modern-big({
+								imgLink: 'post-12-570x316',
+								title: 'Blue Energy Reports 26% Year-on-year Increase'
+							}).block-3
+
+			.pagination-wrap: +pagination-bootstrap(null, 1, 3)
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

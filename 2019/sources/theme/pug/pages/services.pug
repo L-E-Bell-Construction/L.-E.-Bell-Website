@@ -1,0 +1,90 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_box-services
+
+block variables
+	-
+		var
+			activeCategory = 'pages',
+			pageName = 'Services #1';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-services'
+	})
+
+	// Services
+	section.section.section-lg.bg-default
+		.container
+			.row.row-60
+				.col-md-7.col-xl-8
+					.row.row-40
+						.col-lg-12.col-xl-6
+							+services-classic({
+								img: 'services-1-370x274',
+								icon: 'linearicons-pencil-ruler icon-52',
+								title: 'Architectural Design',
+								text: 'Designing buildings of all kinds'
+							})
+						.col-lg-12.col-xl-6
+							+services-classic({
+								img: 'services-2-370x274',
+								icon: 'linearicons-hammer-wrench',
+								title: 'Construction',
+								text: 'Professional construction services'
+							})
+						.col-lg-12.col-xl-6
+							+services-classic({
+								img: 'services-3-370x274',
+								icon: 'linearicons-license2 icon-53',
+								title: 'Quality Control',
+								text: 'Ensuring the best quality'
+							})
+						.col-lg-12.col-xl-6
+							+services-classic({
+								img: 'services-4-370x274',
+								icon: 'linearicons-cog icon-53',
+								title: 'Equipment Rental',
+								text: 'Any equipment for your needs'
+							})
+						.col-lg-12.col-xl-6
+							+services-classic({
+								img: 'services-5-370x274',
+								icon: 'linearicons-sun icon-54',
+								title: 'Green Energy',
+								text: 'Top-notch solar energy solutions'
+							})
+						.col-lg-12.col-xl-6
+							+services-classic({
+								img: 'services-6-370x274',
+								icon: 'linearicons-intersect',
+								title: 'General Contracting',
+								text: 'Reliable general contractors'
+							})
+				.col-md-5.col-xl-4
+					.aside-services
+						h5.aside-services-title solutions for your business
+						ul.list-category
+							li.list-category-item: a.active( href='#' ) All services
+							li.list-category-item: a( href='#' ) Architectural Design
+							li.list-category-item: a( href='#' ) Construction
+							li.list-category-item: a( href='#' ) Quality control
+							li.list-category-item: a( href='#' ) equipment rental
+							li.list-category-item: a( href='#' ) Green energy
+							li.list-category-item: a( href='#' ) General Contracting
+						a.button.button-lg.button-primary.button-winona( href='contacts.html' ) Contact us
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

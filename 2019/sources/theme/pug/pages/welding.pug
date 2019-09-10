@@ -1,0 +1,379 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-creative
+include ../sections/_footer-creative
+include ../components/_card
+include ../components/_counters
+include ../components/_thumbnail
+include ../components/_box-icon
+include ../components/_box-team
+include ../components/_posts
+include ../components/_quote
+
+block variables
+	-
+		var
+			pageName = 'Welding',
+			style = '2';
+
+		logo = {
+			default: 'logo-default-2-396x100.png',
+			inverse: 'logo-inverse-2-396x100.png',
+			name: 'Welding'
+		};
+
+block page
+	// Page Header and Swiper
+	section.section.swiper-custom-container
+		+navbar-creative.context-dark
+
+		include ../sections/_section-slider-2
+
+		// Swiper Pagination
+		.swiper-pagination.swiper-pagination-2
+
+		ul.list-share-2
+			li: a.icon.mdi.mdi-facebook( href='#' )
+			li: a.icon.mdi.mdi-twitter( href='#' )
+			li: a.icon.mdi.mdi-instagram( href='#' )
+			li: a.icon.mdi.mdi-google-plus( href='#' )
+
+		.section-relative: .box-transform( style='background-image: url(images/bg-index-4.jpg);' )
+
+
+	// Our Services
+	section.section.section-xl.bg-default
+		.container
+			h6.subtitle-classic.oh-desktop: span.d-inline-block.wow.slideInDown  Quality work Since 1979
+			h2.title-classic.oh-desktop: span.d-inline-block.wow.slideInUp Our Services
+			.row.row-xxl.row-50.justify-content-lg-between
+				.col-md-6
+					// Bootstrap collapse
+					#accordion2.card-group-classic( role='tablist', aria-multiselectable='false' )
+						+card({
+							show: true,
+							parentId: 'accordion2',
+							icon: 'linearicons-flare',
+							title: 'Portable & On-Site Welding'
+						}).card-classic.wow.fadeInLeft
+							p On-site welding services are ideal for projects that cannot feasibly be managed in the shop or would get better results being handled onsite, such as maintenance and repair services to metal structures.
+						+card({
+							parentId: 'accordion2',
+							icon: 'linearicons-layers',
+							title: 'Custom Welding'
+						}).card-classic.wow.fadeInLeft( data-wow-delay='.05s' )
+							p Custom welding projects could be residential, commercial, and industrial in nature, and include any of the following types of examples: Stairways/railings (both exterior railings and interior railings), platforms, catwalks, mezzanines, hand rails, safety railings, custom gates, drain gates, continuous fencing, grates, tables, metal platform steps, decks, etc.
+						+card({
+							parentId: 'accordion2',
+							icon: 'linearicons-cog',
+							title: 'MIG Welding'
+						}).card-classic.wow.fadeInLeft( data-wow-delay='.1s' )
+							p MIG (Metal Inert  Gas) Welding can be used to join long stretches of metal without stopping, and can be used on all thicknesses of steels, aluminum, nickel, as well as stainless steel. We utilize our MIG welding capabilities for custom steel fabrication to customer print specifications, manufacturing products such as industrial carts, tables, racks and weldments.
+						+card({
+							parentId: 'accordion2',
+							icon: 'linearicons-license2',
+							title: 'TIG Welding'
+						}).card-classic.wow.fadeInLeft( data-wow-delay='.15s' )
+							p TIG (Tungsten Inert Gas) Welding is a staple welding process critical to the performance of tools, dies, molds and inserts. The TIG Welding process allows operators to control heat input and the amount and location of weld metal deposited. This type of welding typically involves building a larger surface area so that it can be re-machined to desired tolerances.
+						+card({
+							parentId: 'accordion2',
+							icon: 'linearicons-pencil-ruler',
+							title: 'Robotic Welding'
+						}).card-classic.wow.fadeInLeft( data-wow-delay='.2s' )
+							p Our Robotic Welding Stations are fully functional cells used for production jobs where robots can output parts in an accurate and quick fashion. We use them primarily for steel welding jobs. As an example, it would take a 3-day welding job by hand but now we can complete it in 3-4 hours.
+
+				.col-md-6.col-lg-5
+					article.team-classic.team-classic-2: .unit.flex-column.flex-sm-row.align-items-start.align-items-sm-center
+						.unit-left: a.team-classic-figure.team-classic-figure-2( href='#' ): +img( 'team-22-115x106' )
+						.unit-body
+							h5.team-classic-title-2 Leave a service request and we’ll contact you!
+							.team-classic-name
+								a( href='#' ) Sam Parker
+								| , #[span Manager]
+					//- Contact forms
+					form.rd-form.rd-mailform( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+						.form-wrap.wow.fadeInRight
+							input#contact-name-6.form-input( type='text', name='name', data-constraints='@Required' )
+							label.form-label( for='contact-name-6' ) Your Name*
+						.form-wrap.wow.fadeInRight( data-wow-delay='.05s' )
+							input#contact-email-6.form-input( type='email', name='email', data-constraints='@Email @Required' )
+							label.form-label( for='contact-email-6' ) Your E-mail*
+						.form-wrap.wow.fadeInRight( data-wow-delay='.15s' )
+							//Select 2
+							select.form-input( data-minimum-results-for-search='Infinity', data-constraints='@Required' )
+								option( value='1' ) Select a Service
+								option( value='2' ) Robotic Welding
+								option( value='3' ) Custom Welding
+								option( value='4' ) On-Site Welding
+						.form-wrap.wow.fadeInRight( data-wow-delay='.2s' )
+							input.form-input( id='contact-phone-6', type='text', name='phone', data-constraints='@Numeric' )
+							label.form-label( for='contact-phone-6' ) Phone
+
+						button.button.button-secondary.button-winona.wow.fadeInRight( type='submit', data-wow-delay='.25s' ) Send request
+
+
+	// Counter Modern
+	+parallax({
+		img: 'bg-counter-4',
+		innerClass: 'section-xxl context-dark'
+	})
+		.container
+			h6.subtitle-classic-2.wow.fadeInRight Company statistics
+			h2.title-classic-2.oh-desktop: span.d-inline-block.wow.slideInDown We are Focused on Results
+			.counter-modern-wrap
+				+counter-modern({
+					number: '101',
+					symbol: '+',
+					title: 'Projects'
+				})
+				+counter-modern({
+					number: '53',
+					title: 'Awards'
+				})
+				+counter-modern({
+					number: '35',
+					symbol: '+',
+					title: 'welders'
+				})
+
+
+	// Our Projects
+	section.section.section-xl.bg-default.text-center
+		.container
+			h6.subtitle-classic.wow.fadeInLeft What we do
+			h2.title-classic.oh-desktop: span.d-inline-block.wow.slideInUp Our Projects
+			.row.row-xl( data-lightgallery='group' )
+				.col-md-6: .oh-desktop
+					+thumbnail-classic({
+						img: 'project-1-570x299',
+						imgOriginal: 'project-1-1200x800-original',
+						title: 'Smith office center'
+					}).block-lg.wow.slideInLeft
+				.col-md-6: .oh-desktop
+					+thumbnail-classic({
+						img: 'project-2-570x299',
+						imgOriginal: 'project-2-1200x800-original',
+						title: 'STC conference hall'
+					}).block-lg.wow.slideInDown
+				.col-md-6: .oh-desktop
+					+thumbnail-classic({
+						img: 'project-3-570x299',
+						imgOriginal: 'project-3-1200x800-original',
+						title: 'Pace hotel'
+					}).block-lg.wow.slideInUp
+				.col-md.wow.slideInRight-6: .oh-desktop
+					+thumbnail-classic({
+						img: 'project-4-570x299',
+						imgOriginal: 'project-4-1200x800-original',
+						title: 'Seattle community center'
+					}).block-lg.wow.slideInRight
+
+			a.button.button-lg.button-block.button-outline.button-outline-2.button-default-outline-3.button-winona.wow.fadeInUp( href='projects.html' ) See all projects
+
+
+	// Icon Creative
+	+parallax({
+		img: 'bg-icon-2',
+		innerClass: 'section-xl context-dark text-md-left'
+	})
+		.container
+			h3.title-classic-3.wow.fadeInRight Professional Welding Solutions
+			p.big.text-spacing-75.text-white-06.wow.fadeInRight( data-wow-delay='.1s' ) Since our inception, we have been offering high-quality reliable welding services.
+			.row.row-lg.row-30
+				.col-sm-6.col-md-4.col-lg-3.oh-desktop
+					+box-icon-creative({
+						icon: 'linearicons-hammer-wrench',
+						title: 'Modern equipment'
+					}).wow.slideInUp
+				.col-sm-6.col-md-4.col-lg-3.oh-desktop
+					+box-icon-creative({
+						icon: 'linearicons-star',
+						title: '356 successful projects'
+					}).wow.slideInDown
+				.col-sm-6.col-md-4.col-lg-3.oh-desktop
+					+box-icon-creative({
+						icon: 'linearicons-thumbs-up',
+						title: 'Qualified team'
+					}).wow.slideInUp
+				.col-sm-6.col-md-4.col-lg-3.oh-desktop
+					+box-icon-creative({
+						icon: 'linearicons-license2',
+						title: 'ISO 9001:2008 Certified'
+					}).wow.slideInDown
+
+
+	// True professionals
+	section.section.section-xl.bg-default.text-center
+		.container
+			h6.subtitle-classic.wow.fadeInRight True professionals
+			h2.title-classic.oh-desktop: span.d-inline-block.wow.slideInUp Our Team
+			.owl-carousel.owl-style-6.dots-style-2( data-items='1', data-sm-items='2', data-lg-items='3', data-margin='30', data-autoplay='true', data-dots='true', data-animation-in='fadeIn', data-animation-out='fadeOut' )
+				+team-ruth({
+					unit: 'flex-sm-column flex-md-row',
+					title: 'President & CEO',
+					img: 'team-23-167x162',
+					name: 'Stephen Williams',
+					link: 'info@demolink.org',
+					text: 'Stephen Williams is the owner of Welding who also is a very experienced welder.'
+				}).text-sm-center.text-md-left
+				+team-ruth({
+					unit: 'flex-sm-column flex-md-row',
+					title: 'Vice President & CFO',
+					img: 'team-24-167x162',
+					name: 'Jacob Smith',
+					link: 'info@demolink.org',
+					text: 'Jacob Smith is a co-founder and one of our leading welding specialists.'
+				}).text-sm-center.text-md-left
+				+team-ruth({
+					unit: 'flex-sm-column flex-md-row',
+					title: 'Head of welding department',
+					img: 'team-25-167x162',
+					name: 'Peter Adams',
+					link: 'info@demolink.org',
+					text: 'Peter is responsible for correct and timely work of our welding team.'
+				}).text-sm-center.text-md-left
+				+team-ruth({
+					unit: 'flex-sm-column flex-md-row',
+					title: 'President & CEO',
+					img: 'team-23-167x162',
+					name: 'Stephen Williams',
+					link: 'info@demolink.org',
+					text: 'Stephen Williams is the owner of Welding who also is a very experienced welder.'
+				}).text-sm-center.text-md-left
+				+team-ruth({
+					unit: 'flex-sm-column flex-md-row',
+					title: 'Vice President & CFO',
+					img: 'team-24-167x162',
+					name: 'Jacob Smith',
+					link: 'info@demolink.org',
+					text: 'Jacob Smith is a co-founder and one of our leading welding specialists.'
+				}).text-sm-center.text-md-left
+				+team-ruth({
+					unit: 'flex-sm-column flex-md-row',
+					title: 'Head of welding department',
+					img: 'team-25-167x162',
+					name: 'Peter Adams',
+					link: 'info@demolink.org',
+					text: 'Peter is responsible for correct and timely work of our welding team.'
+				}).text-sm-center.text-md-left
+
+
+	// Section CTA
+	+parallax({
+		img: 'bg-index-2',
+		innerClass: 'section-sm section-inset-1 context-dark text-md-left'
+	})
+		.container: .row.row-30.justify-content-center.align-items-center
+			.col-sm-10.col-md-7.col-lg-6.col-xl-9
+				h5.font-weight-normal.text-transform-none.oh-desktop: span.d-inline-block.wow.slideInUp Providing High-quality Welding Services Since 1980
+			.col-md-5.col-lg-4.col-xl-3.text-md-right.oh-desktop
+				a.button.button-width-auto.button-outline.button-default-outline-2.button-winona.wow.slideInRight( href='contacts.html' ) Get in touch
+
+
+	// Latest News
+	section.section.section-xl.section-fluid.bg-gray-100.text-center
+		.container-fluid
+			h6.subtitle-classic.wow.fadeInLeft Our blog
+			h2.title-classic.oh-desktop: span.d-inline-block.wow.slideInDown Latest News
+			// Owl Carousel
+			.owl-wrap-1: .owl-carousel.owl-style-7( data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-xl-items='5', data-xxl-items='6', data-dots='true', data-mouse-drag='false' )
+				div( data-merge='1' )
+					+post-modern({
+						tag: 'Welding',
+						title: 'Robotic Welding to Grow Sharply by the End of 2020'
+					}).post-modern-height.block-2
+					+post-modern({
+						tag: 'Industry news',
+						img: 'post-10-270x247',
+						title: 'Artisan Training to Benefit Welders'
+					}).post-modern-2.block-2
+
+				div( data-merge='2' )
+					+post-modern-big({
+						tag: 'Technology',
+						img: 'welding/post-1-570x528',
+						title: 'Welding Technique Expands Outlook for Superconductors',
+						video: 'https://www.youtube.com/watch?v=1UWpbtUupQQ'
+					}).post-modern-3.block-2
+
+				div( data-merge='2' )
+					+post-modern-horizontal({
+						img: 'welding/post-2-195x191',
+						tag: 'Welding careers',
+						title: 'Industry Experiences a Need for Female Welders'
+					}).post-modern-4.block-2
+
+					+post-modern-horizontal({
+						img: 'welding/post-3-195x191',
+						tag: 'Blog',
+						title: 'Biggest Welding Machine Ever Arrives at Our Welding Company'
+					}).post-modern-4.block-2
+
+				div( data-merge='1' )
+					+post-modern-2({
+						imgLink: 'welding/post-4-270x282',
+						title: 'Specialised Welding Enhances Refurbishment'
+					}).post-modern-5.post-modern-quote.block-2
+
+
+	section.section.swiper-container.swiper-slider.swiper-slider-8.swiper-slider-9( data-loop='true', data-autoplay='5000', data-simulate-touch='false', data-slide-effect='fade' )
+		.swiper-wrapper.text-left
+			.swiper-slide.context-dark: .swiper-slide-caption.section-lg
+				.container: .row.justify-content-center.justify-content-md-between
+					.col-5.d-none.d-md-block.position-static: .quote-classic-figure: +img( 'clients-19-960x574' )
+					.col-sm-11.col-md-7.col-xl-6.col-xxl-5
+						h2.title-classic Our Clients
+						+quote-classic({
+							text: 'This company always offers a fast and efficient service at a great price. They are the only company we use for our welding needs.',
+							author: 'Jim McMillan, CEO “MCM Corp.”'
+						}).quote-classic-2( data-caption-animate='fadeInLeft', data-caption-delay='0' )
+			.swiper-slide.context-dark: .swiper-slide-caption.section-lg
+				.container: .row.justify-content-center.justify-content-md-between
+					.col-5.d-none.d-md-block.position-static: .quote-classic-figure: +img( 'clients-20-960x574' )
+					.col-sm-11.col-md-7.col-xl-6.col-xxl-5
+						h2.title-classic Our Clients
+						+quote-classic({
+							text: 'My experience in working with Welding was very much a positive one. They are very professional and I recommend them.',
+							author: 'Adam Smith, regional manager “STC LTD”'
+						}).quote-classic-2( data-caption-animate='fadeInLeft', data-caption-delay='0' )
+			.swiper-slide.context-dark: .swiper-slide-caption.section-lg
+				.container: .row.justify-content-center.justify-content-md-between
+					.col-5.d-none.d-md-block.position-static: .quote-classic-figure: +img( 'clients-21-960x574' )
+					.col-sm-11.col-md-7.col-xl-6.col-xxl-5
+						h2.title-classic Our Clients
+						+quote-classic({
+							text: 'Our cooperation with Welding has proven to not only be professional but they have been fair and thorough.',
+							author: 'Sam Williams, CFO “iTex”'
+						}).quote-classic-2( data-caption-animate='fadeInLeft', data-caption-delay='0' )
+		// Swiper Navigation
+		.swiper-navigation__module
+			.swiper-pagination__fraction
+				span.swiper-pagination__fraction-index
+				span.swiper-pagination__fraction-divider /
+				span.swiper-pagination__fraction-count
+			.swiper-button-prev
+			.swiper-button-next
+
+		// Swiper Pagination
+		.swiper-pagination( data-bullet-custom='true' )
+
+
+	// Our Clients
+	include ../sections/_clients-creative
+
+
+	// Page Footer
+	+footer-creative({
+		text: 'Providing quality welding services since 1980.',
+		posts: [
+			{
+				img: 'welding/post-5-115x89',
+				title: 'Top 10 Technological Advancements in Welding'
+			},
+			{
+				img: 'welding/post-6-115x89',
+				title: 'Benefits of On-Site Welding for Companies'
+			}
+		]
+	})

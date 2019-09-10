@@ -1,0 +1,24 @@
+/*
+* Footers
+*/
+
+//
+// Footer Classic
+//
+
+.footer-classic {
+	padding: 20px 0;
+	background: $white;
+
+	// Medium ≥768px
+	@include media-breakpoint-up(md) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+
+	@include media-breakpoint-up(xl) {
+		padding-top: 42px;
+		padding-bottom: 42px;
+	}
+}

@@ -1,0 +1,73 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_posts
+include ../components/_pagination
+
+block variables
+	-
+		var
+			activeCategory = 'blog',
+			pageName = 'Grid blog';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-blog'
+	})
+
+	// Grid Blog
+	section.section.section-lg.bg-default
+		.container
+			.row.row-40.row-lg-60.justify-content-center
+				.col-sm-6.col-lg-4.order-lg-1
+					+post-classic({
+						img: 'post-1-370x210',
+						time: { datetime: '2019-04-30', datetext: 'April 30, 2019' },
+						title: 'North Sea Pipeline Resumes After Second Halt in Two Months'
+					}).block-3
+				.col-sm-6.col-lg-4.order-lg-1
+					+post-classic({
+						img: 'post-2-370x365',
+						time: { datetime: '2019-04-25', datetext: 'April 25, 2019' },
+						title: 'Crude Declines as Growth in Shale Production Scares Investors'
+					}).post-classic-2.block-3
+				.col-sm-6.col-lg-4.order-md-3.order-lg-1
+					+post-classic({
+						img: 'post-3-370x210',
+						time: { datetime: '2019-04-05', datetext: 'April 05, 2019' },
+						title: 'America’s Supertanker Terminal Set to Export Oil for First Time'
+					}).block-3
+				.col-sm-6.col-lg-4.order-md-2.order-lg-1
+					+post-classic({
+						img: 'post-4-370x365',
+						time: { datetime: '2019-06-11', datetext: 'June 11, 2019' },
+						title: 'Fracking Earthquakes Pop Up In Unexpected Corner of Shale Patch'
+					}).post-classic-2.block-3
+				.col-sm-6.col-lg-4.order-md-4.order-lg-1
+					+post-classic({
+						img: 'post-5-370x210',
+						time: { datetime: '2019-06-06', datetext: 'June 06, 2019' },
+						title: 'Overview: Blue Energy Financial Report for Investors'
+					}).block-3
+				.col-sm-6.col-lg-4.order-md-5.order-lg-1
+					+post-classic({
+						img: 'post-6-370x365',
+						time: { datetime: '2019-06-06', datetext: 'June 06, 2019' },
+						title: 'Blue Energy Reports 26% Year-on-year Increase in Net Profit for 2019'
+					}).post-classic-2.block-3
+
+			.pagination-wrap: +pagination-bootstrap(null, 1, 3)
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

@@ -1,0 +1,93 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_form-checkout
+
+block variables
+	-
+		var
+			activeCategory = 'shop',
+			pageName = 'Checkout';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-shop'
+	})
+
+	// Section checkout form
+	section.section.section-sm.section-first.bg-default.text-md-left
+		.container
+			.row.row-50.justify-content-center
+				.col-md-10.col-lg-6
+					h5 Billing Address
+					+form-checkout({customUnique: '1', checkbox: true})
+				.col-md-10.col-lg-6
+					h5 Delivery Address
+					+form-checkout({customUnique: '2'})
+
+	// Shopping Cart
+	section.section.section-sm.bg-default.text-md-left
+		.container
+			h5 Your shopping cart
+			include ../sections/_shopping-cart
+
+
+	// Section Payment
+	section.section.section-sm.section-last.bg-default.text-md-left
+		.container
+			.row.row-50.justify-content-center
+				.col-md-10.col-lg-6
+					h5 Payment methods
+					.box-radio
+						.radio-panel
+							label.radio-inline.active
+								input( name='input-group-radio', value='checkbox-1', type='radio', checked )
+								| Direct Bank Transfer
+							.radio-panel-content
+								p Make your payment directly into our bank account. Please use your Order ID as the payment reference.
+
+						.radio-panel
+							label.radio-inline
+								input( name='input-group-radio', value='checkbox-1', type='radio' )
+								| PayPal
+							.radio-panel-content
+								p Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.
+
+						.radio-panel
+							label.radio-inline
+								input( name='input-group-radio', value='checkbox-1', type='radio' )
+								| Cheque Payment
+							.radio-panel-content
+								p Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.
+
+				.col-md-10.col-lg-6
+					h5 Cart totals
+					.table-custom-responsive
+						table.table-custom.table-custom-primary.table-checkout
+							tbody
+								tr
+									td Cart Subtotal
+									td $700
+								tr
+									td Shipping
+									td Free
+								tr
+									td Total
+									td $700
+
+			.button-wrap.text-center
+				a.button.button-lg.button-width-240.button-primary.button-pipaluk( href='#' ) Checkout
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

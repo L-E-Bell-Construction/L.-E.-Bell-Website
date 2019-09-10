@@ -1,0 +1,57 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+
+block variables
+	-
+		var
+			activeCategory = 'pages',
+			pageName = 'Buttons';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-elements-1'
+	})
+
+	// Button Sizes
+	section.section.section-sm.section-first.bg-default.text-md-left
+		.container
+			h4.text-spacing-50.font-weight-bold Button Sizes
+			.group-md.group-middle
+				.button.button-lg.button-primary.button-winona Large size
+				.button.button-primary.button-winona Medium size
+				.button.button-sm.button-primary.button-winona Small size
+
+
+	// Button Shapes
+	section.section.section-sm.bg-default.text-md-left
+		.container
+			h4.text-spacing-50.font-weight-bold Buttons with icons
+			.group-md.group-middle
+				.button.button-lg.button-icon.button-icon-left.button-primary.button-winona
+					span.icon.mdi.mdi-download
+					span Icon left
+				.button.button-lg.button-icon.button-icon-right.button-gray-3
+					span.icon.mdi.mdi-chevron-right
+					| Icon right
+
+
+	// Buttons with Shadow
+	section.section.section-sm.section-last.bg-default.text-md-left
+		.container
+			h4.text-spacing-50.font-weight-bold Button with shadow
+			.group-md.group-middle
+				.button.button-lg.button-primary.button-shadow.button-winona Shadow
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

@@ -1,0 +1,360 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-modern
+include ../components/_box-services
+include ../components/_card
+include ../components/_thumbnail
+include ../components/_counters
+include ../components/_quote
+include ../components/_posts
+include ../components/_box-team
+
+block variables
+	-
+		var
+			pageName = 'Steelworks',
+			style = '3';
+
+		logo = {
+			default: 'logo-default-3-424x122.png',
+			inverse: 'logo-inverse-3-424x122.png',
+			name: 'X Production'
+		};
+
+block page
+	// Page Header
+	+navbar-classic.rd-navbar-classic-2
+		+box-icon-minimal({
+			unit: 'unit-spacing-sm',
+			icon: 'linearicons-factory2',
+			title: 'Leading Provider',
+			text: 'Of Industrial Solutions'
+		})
+		+box-icon-minimal({
+			unit: 'unit-spacing-xxs',
+			icon: 'linearicons-medal-empty',
+			title: 'Certified',
+			text: 'ISO 9001:2008'
+		})
+		+box-icon-minimal({
+			unit: 'unit-spacing-xs',
+			icon: 'linearicons-flag',
+			title: '38 Years',
+			text: 'Of Experience'
+		})
+
+	// Swiper
+	include ../sections/_section-slider-3
+
+	// Section Services
+	section.section.section-xl.section-top-0.bg-default.text-md-left
+		.container
+			// Owl Carousel
+			.owl-carousel.bordered-4( data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-mouse-drag='false', data-dots='true' )
+				+services-tammy({
+					title: 'Iron Making',
+					img: 'steelworks/services-1-218x129',
+					number: '01'
+				}).wow.fadeInUp
+				+services-tammy({
+					title: 'Metalworking',
+					img: 'steelworks/services-2-218x129',
+					number: '02'
+				}).wow.fadeInUp( data-wow-delay='.05s' )
+				+services-tammy({
+					title: 'Welding Services',
+					img: 'steelworks/services-3-218x129',
+					number: '03'
+				}).wow.fadeInUp( data-wow-delay='.1s' )
+				+services-tammy({
+					title: 'Ore Production',
+					img: 'steelworks/services-4-218x129',
+					number: '04'
+				}).wow.fadeInUp( data-wow-delay='.15s' )
+
+
+	// About our plant
+	section.section.section-md.section-inset-2.bg-gray-100.text-left.section-relative
+		.container
+			.row.row-60.justify-content-center.justify-content-xxl-between
+				.col-md-9.col-lg-6.position-static.index-1
+					.bg-image-left-lg.bg-image-left-1
+						+img( 'steelworks/video-1-1110x800' )
+						.link-play-creative
+							a.icon.mdi.mdi-play( data-lightgallery='item', href='https://www.youtube.com/watch?v=OlBgxelH6Lw' )
+							h6.link-play-creative-title.wow.fadeInRight Video presentation of the company
+							.link-play-creative-decor.wow.slideInUp
+						.box-transform( style='background-image: url(images/steelworks/video-1-1110x800.jpg);' )
+
+				.col-lg-6.position-static
+					.inset-left-lg-15.inset-left-xl-70
+						h3.text-spacing-50.font-weight-light.oh-desktop: span.d-inline-block.wow.slideInDown
+							span.font-weight-bold About
+							|  our plant
+						#accordion4.card-group-custom.card-group-corporate( role='tablist', aria-multiselectable='false' )
+							+card({
+								show: true,
+								parentId: 'accordion4',
+								title: 'A Few Words About Us'
+							}).card-corporate.card-corporate-2.wow.fadeInLeft
+								p X Production is one of the world's largest steel manufacturers and a leading American metal company. Today the company is the #1 provider of sub-contract fabrication services.
+							+card({
+								parentId: 'accordion4',
+								title: 'Our Mission'
+							}).card-corporate.card-corporate-2.wow.fadeInLeft
+								p Quality work in fabrication of steel structures and timely completion are the main essence of our business policy. We also strive for the close cooperation with our clients.
+							+card({
+								parentId: 'accordion4',
+								title: 'Our Vision'
+							}).card-corporate.card-corporate-2.wow.fadeInLeft
+								p We aim to be among the top recognized organizations that are involved in multidisciplinary fabrication and erection services in various countries across the world.
+							+card({
+								parentId: 'accordion4',
+								title: 'Company Values'
+							}).card-corporate.card-corporate-2.wow.fadeInLeft
+								p Our company is based on integrity, trust, teamwork, and quality. These values help us remain the leaders of the metalworking industry for decades and offer great products.
+
+					.bg-image-right.bg-image-right-3
+
+	// Our Projects
+	section.section.section-xl.bg-default.text-center
+		.container
+			h3.text-spacing-50.font-weight-light.oh-desktop
+				span.d-inline-block.wow.slideInDown Our
+				=' '
+				span.font-weight-bold.d-inline-block.wow.slideInUp Projects
+			.row.row-xl( data-lightgallery='group' )
+				.col-md-6: .oh-desktop
+					+thumbnail-classic({
+						img: 'steelworks/project-1-570x299',
+						imgOriginal: 'steelworks/project-1-1200x800-original',
+						title: 'Alloys & stainless steel'
+					}).block-lg.wow.slideInUp
+				.col-md-6: .oh-desktop
+					+thumbnail-classic({
+						img: 'steelworks/project-2-570x299',
+						imgOriginal: 'steelworks/project-2-1200x800-original',
+						title: 'Retail metal solutions'
+					}).block-lg.wow.slideInLeft
+				.col-md-6: .oh-desktop
+					+thumbnail-classic({
+						img: 'steelworks/project-3-570x299',
+						imgOriginal: 'steelworks/project-3-1200x800-original',
+						title: 'Sheet metal fabrication'
+					}).block-lg.wow.slideInRight
+				.col-md.wow.slideInRight-6: .oh-desktop
+					+thumbnail-classic({
+						img: 'steelworks/project-4-570x299',
+						imgOriginal: 'steelworks/project-4-1200x800-original',
+						title: 'Iron ore processing'
+					}).block-lg.wow.slideInDown
+
+			a.button.button-lg.button-block.button-outline.button-outline-2.button-default-outline-4.button-winona.wow.fadeInUp( href='projects.html' ) See all projects
+
+
+	// Latest news
+	section.section.bg-blue-2.section-relative.context-dark.text-sm-left
+		.container: .row: .col-lg-6.position-static
+			.bg-image-left.bg-image-left-2
+			.section-md
+				.row.row-30
+					.col-sm-8.col-xl-7
+						.title-style-2
+							h4.text-spacing-50.font-weight-light.oh-desktop: span.d-inline-block.wow.slideInLeft
+								span.font-weight-bold Company
+								|  statistics
+						p.big.text-style-2.wow.fadeInLeft Since our establishment, we have produced an extensive amount of steel products for our  clients worldwide.
+						a.button.button-outline.button-default-outline-2.button-winona.wow.fadeInLeft( href='#' ) Read more
+					.col-sm-4.col-xl-5: .inset-right-lg-15.inset-right-xl-55: .row.justify-content-xl-end.bordered-5
+						.col-6.col-sm-12
+							+counter-creative({
+								number: '640',
+								title: 'Projects'
+							})
+						.col-6.col-sm-12
+							+counter-creative({
+								number: '234',
+								title: 'Partners'
+							})
+						.col-6.col-sm-12
+							+counter-creative({
+								number: '150',
+								title: 'Products'
+							})
+
+		.gmap-classic
+			include ../sections/_section-gmap-2
+
+
+	// Our clients
+	section.section.section-xl.bg-default.text-center
+		.container
+			h3.text-spacing-50.font-weight-light.oh-desktop.d-inline-block
+				span.font-weight-bold.d-inline-block.wow.slideInUp Our
+				=' '
+				span.d-inline-block.wow.slideInRight clients
+			.owl-carousel.owl-style-8.dots-style-2.dots-style-3( data-items='1', data-sm-items='1', data-lg-items='2', data-margin='30', data-autoplay='true', data-dots='true', data-animation-in='fadeIn', data-animation-out='fadeOut' )
+				.quote-modern-wrap
+					.unit.unit-spacing-xl.flex-column.flex-sm-row.align-items-center
+						.unit-left
+							a.quote-modern-figure( href='#' ): +img( 'clients-27-215x349' )
+						.unit-body
+							+quote-modern({
+								text: 'X Production is extremely professional in every aspect of their business from manufacture to delivery of steel products.',
+								author: 'Stephen Adams',
+								status: '“AlphaIndustry”, CEO'
+							}).quote-modern-2
+
+				.quote-modern-wrap
+					.unit.unit-spacing-xl.flex-column.flex-sm-row.align-items-center
+						.unit-left
+							a.quote-modern-figure( href='#' ): +img( 'clients-28-215x349' )
+						.unit-body
+							+quote-modern({
+								text: 'We value X Production as a key supplier and have always been impressed with their innovative and flexible approach.',
+								author: 'Sam Peterson',
+								status: '“Digitex”, CFO'
+							}).quote-modern-2
+
+				.quote-modern-wrap
+					.unit.unit-spacing-xl.flex-column.flex-sm-row.align-items-center
+						.unit-left
+							a.quote-modern-figure( href='#' ): +img( 'clients-29-215x349' )
+						.unit-body
+							+quote-modern({
+								text: 'X Production is the company we call for all our stainless and steel fabrications. We have used their services for over two decades.',
+								author: 'James Wilson',
+								status: '“MPT Industrial”, CEO'
+							}).quote-modern-2
+
+				.quote-modern-wrap
+					.unit.unit-spacing-xl.flex-column.flex-sm-row.align-items-center
+						.unit-left
+							a.quote-modern-figure( href='#' ): +img( 'clients-30-215x349' )
+						.unit-body
+							+quote-modern({
+								text: 'X Production has consistently delivered good quality products on time. We rate them highly as a metalwork fabricator.',
+								author: 'John McMillan',
+								status: '“Constructo”, CEO'
+							}).quote-modern-2
+
+
+	// Section CTA
+	+parallax({
+		img: 'bg-index-8',
+		innerClass: 'section-sm section-inset-1 context-dark text-md-left'
+	})
+		.container: .row.row-30.justify-content-center.align-items-center
+			.col-sm-10.col-md-8.col-lg-6.col-xl-9
+				h5.text-xl-nowrap.font-weight-normal.text-transform-none.wow.fadeInDown Delivering Reliable Steel Products & Solutions Worldwide Since 1980
+			.col-md-4.col-xl-3.text-md-right.oh-desktop
+				a.button.button-width-auto.button-outline.button-default-outline-2.button-winona.wow.slideInRight( href='contacts.html' ) Get in touch
+
+
+	// Latest news
+	section.section.section-xl.bg-gray-100.text-center
+		.container
+			h3.text-spacing-50.font-weight-light.oh-desktop.d-inline-block
+				span.font-weight-bold.d-inline-block.wow.slideInLeft Latest
+				=' '
+				span.d-inline-block.wow.slideInRight news
+			.row.row-lg.row-30.justify-content-center
+				.col-sm-6.col-lg-4: .oh-desktop
+					+post-classic({
+						img: 'steelworks/post-1-370x365',
+						time: { datetime: '2019-04-05', datetext: 'April 05, 2019' },
+						title: 'Additional Septic Tank Moulds Supplied By X Production Steelworks'
+					}).post-classic-2.block-1.wow.slideInRight
+				.col-sm-6.col-lg-4: .oh-desktop
+					+post-classic({
+						img: 'post-6-370x365',
+						time: { datetime: '2019-04-05', datetext: 'April 05, 2019' },
+						title: 'Our Plant has Completed Key Component on Wear Crossing'
+					}).post-classic-2.block-1.wow.slideInUp
+				.col-sm-6.col-lg-4: .oh-desktop
+					+post-classic({
+						img: 'post-4-370x365',
+						time: { datetime: '2019-04-15', datetext: 'April 15, 2019' },
+						title: 'Organizing Fast Worldwide Delivery of Custom-made Steel Products'
+					}).post-classic-2.block-1.wow.slideInLeft
+
+
+	// Our Team
+	section.section.section-xl.bg-default.text-md-left
+		.container
+			.row.row-50.justify-content-center.justify-content-md-start
+				.col-lg-8.wow.fadeInLeft( data-wow-delay='.1s' )
+					.slick-team-2: .slick-team
+						// Slick Carousel
+						.slick-slider.carousel-parent( data-autoplay='true', data-swipe='true', data-items='1', data-child='#child-carousel-3', data-for='#child-carousel-3', data-slide-effect='true' )
+							.item
+								+team-creative({
+									img: 'team-26-270x367',
+									name: 'Andrew Green',
+									status: 'President',
+									text: 'Andrew Green joined X Production in 2005 after receiving an MBA from the University of North Carolina, Chapel Hill. He represents the third generation of his family to lead the company.'
+								})
+							.item
+								+team-creative({
+									img: 'team-27-270x367',
+									name: 'Steven Henderson',
+									status: 'Vice President of Manufacturing',
+									text: 'As VP of Manufacturing, Steven Henderson is responsible for the operation of the manufacturing facilities of X Production, which he joined in 1999. He has more than 20 years of experience in metalworking.'
+								})
+							.item
+								+team-creative({
+									img: 'team-28-270x367',
+									name: 'Edward Bryant',
+									status: 'Quality Control Manager',
+									text: 'Edward Bryant ensures that all fabricated steel meets the level of quality required by codes and specifications. He joined our team in 1993 and served as Assistant Quality Control Manager.'
+								})
+							.item
+								+team-creative({
+									img: 'team-29-270x367',
+									name: 'Roger Evans',
+									status: 'Plant Engineer',
+									text: 'Roger Evans joined our steelworks team in 2010 after receiving his BS in Industrial Engineering from Texas A&M University. He oversees the production of all detail drawings that take place at our central plant.'
+								})
+							.item
+								+team-creative({
+									img: 'team-38-270x367',
+									name: 'Stanley Williams',
+									status: 'Business Manager',
+									text: 'Stanley joined our company in 2011 to manage the accounting and HR departments after 15 years in cable industry management and accounting. He proved to be a dedicated and seasoned member of X Production.'
+								})
+						.child-team-carousel
+							.slick-slider.child-carousel#child-carousel-3( data-arrows='true', data-for='.carousel-parent', data-items='3', data-sm-items='4', data-md-items='4', data-lg-items='3', data-xl-items='4', data-slide-to-scroll='1' )
+								.item: +img( 'team-30-80x78' )
+								.item: +img( 'team-31-80x78' )
+								.item: +img( 'team-32-80x78' )
+								.item: +img( 'team-33-80x78' )
+								.item: +img( 'team-39-80x78' )
+
+				.col-sm-8.col-lg-4.wow.fadeInLeft( data-wow-delay='0s' ): .box-style-1
+					h3.text-spacing-50.font-weight-light.oh-desktop: span.d-inline-block.wow.slideInRight
+						span.font-weight-bold Key
+						|  people
+					.decor-classic.decor-classic-2.oh-desktop: span.wow.slideInLeft
+					h5.text-style-3.wow.fadeInRight X Production Steelworks is a team of dedicated metalworking experts.
+					a.button.button-lg.button-secondary.button-winona.button-shadow-2.wow.fadeInUp( href='#' ) Join our team
+					a.link-style-1( href='#' ) 10 current vacancies available
+
+
+	// Clients Jean
+	include ../sections/_clients-jean
+
+
+	// Page Footer
+	+footer-modern({
+		textForm: 'Sign up today for the latest news from X Production.',
+		list: [
+			{ text: 'Steel Fabrication' },
+			{ text: 'Metalworking' },
+			{ text: 'Profiling' },
+			{ text: 'Ore Production' },
+			{ text: 'Guillotining' },
+			{ text: 'Welding' }
+		]
+	})

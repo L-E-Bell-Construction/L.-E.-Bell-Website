@@ -1,0 +1,148 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_product
+include ../components/_pagination
+include ../components/_box-comment
+include ../components/_form-comments
+
+block variables
+	-
+		var
+			activeCategory = 'shop',
+			pageName = 'Single Product';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-shop'
+	})
+
+	// Single Product
+	section.section.section-sm.section-first.bg-default
+		.container
+			.row.row-30
+				.col-lg-6
+					.slick-vertical.slick-product
+						// Slick Carousel
+						.slick-slider.carousel-parent( data-swipe='true', data-items='1', data-child='#child-carousel-6', data-for='#child-carousel-6' )
+							.item: .slick-product-figure: +img( 'single-product-1-530x480.png' )
+							.item: .slick-product-figure: +img( 'single-product-2-530x480.png' )
+							.item: .slick-product-figure: +img( 'single-product-3-530x480.png' )
+						.slick-slider.child-carousel#child-carousel-6( data-for='.carousel-parent', data-arrows='true', data-items='3', data-sm-items='3', data-md-items='3', data-lg-items='3', data-xl-items='3', data-slide-to-scroll='1', data-md-vertical='true' )
+							.item: .slick-product-figure: +img( 'single-product-1-530x480.png' )
+							.item: .slick-product-figure: +img( 'single-product-2-530x480.png' )
+							.item: .slick-product-figure: +img( 'single-product-3-530x480.png' )
+
+				.col-lg-6
+					.single-product
+						h4.text-transform-none.text-spacing-50 Drill Press Vise
+						.group-md.group-middle
+							.single-product-price $225.00
+							.single-product-rating
+								span.mdi.mdi-star
+								span.mdi.mdi-star
+								span.mdi.mdi-star
+								span.mdi.mdi-star
+								span.mdi.mdi-star-half
+						p A falsis, cobaltum primus extum. Heu, alter hilotae! Nunquam perdere torquis. Est gratis triticum, cesaris. Vae, brevis stella! Talis amicitias ducunt ad species. Heu, dexter historia! Cum torquis tolerare, omnes extumes.
+						hr.hr-gray-300
+						ul.list.list-description.d-inline-block.d-md-block
+							li
+								span Categories:
+								span Carpentry
+							li
+								span Weight:
+								span 15 kg
+							li
+								span Dimensions:
+								span 60 x 60 x 90 cm
+						.group-lg.group-middle
+							div.product-stepper: input.form-input( type='number', data-zeros='true', value='1', min='1', max='1000' )
+							div: a.button.button-lg.button-secondary.button-winona( href='cart-page.html' ) Add to cart
+						hr.hr-gray-300
+						.group-sm.group-middle
+							span.single-product-social-title Share
+							div: +widget-list([], '', 'single-product-social-list list-inline-sm' )
+			// Bootstrap tabs
+			#tabs-3.tabs-custom.tabs-horizontal.tabs-corporate
+				// Nav tabs
+				ul.nav.nav-tabs
+					li.nav-item( role='presentation' ): a.nav-link.active( href='#tabs-3-1', data-toggle='tab' ) Comments
+					li.nav-item( role='presentation' ): a.nav-link( href='#tabs-3-2', data-toggle='tab' ) Additional information
+					li.nav-item( role='presentation' ): a.nav-link( href='#tabs-3-3', data-toggle='tab' ) Delivery and payment
+				// Tab panes
+				.tab-content
+					div#tabs-3-1.tab-pane.fade.show.active
+						.box-comment-wrap
+							+box-comment({
+								productComments: true,
+								img: 'user-1-119x119',
+								author: 'John Doe',
+								text: 'Species bassus zeta est. Varius hibrida foris perderes vita est. Peregrinationes nunquam ducunt ad noster elevatus. Nunquam manifestum demissio. Danistas sunt lunas de secundus zirbus. Scutums sunt triticums de flavum capio.',
+								datetime: '2019-11-30',
+								time: 'Nov 30, 2019'
+							}).box-comment-product
+						+form-comments({customUnique: '3'})
+					div#tabs-3-2.tab-pane.fade
+						.unit.unit-spacing-1.flex-column.flex-md-row.align-items-lg-center
+							.unit-left
+								span.icon-xxxl.text-gray-800-01.mdi.mdi-information-outline
+							.unit-body
+								p.text-spacing-50 Ubi est placidus demolitione? Sunt lubaes acquirere germanus, salvus bromiumes. Est germanus quadra, cesaris. Sunt eleateses imperium azureus, camerarius elogiumes. Agripetas volare! Est primus accola, cesaris. Heuretes mirabilis galatae est. Est fortis vox, cesaris. Nunquam prensionem exemplar. Ausus, habena, et castor. Pius indexs ducunt ad danista. Amicitias experimentum, tanquam altus gabalium.
+
+					div#tabs-3-3.tab-pane.fade
+						.unit.unit-spacing-1.flex-column.flex-md-row.align-items-lg-center
+							.unit-left
+								span.icon-xxxl.text-gray-800-01.mdi.mdi-information-outline
+							.unit-body
+								p.text-spacing-50 Here you can read some details about a nifty little lifecycle of your order's journey. At first you choose the product you like. Then you put into your shopping cart and pass the checkout process in a few clicks. Our store offers several payment and delivery methods, so you have an opportunity to choose which one is the most convenient for you.
+
+
+	// Related Products
+	section.section.section-sm.section-last.bg-default
+		.container
+			h5 Related Products
+			.row.row-lg.row-30
+				.col-sm-6.col-lg-4.col-xl-3
+					+product({
+						img: 'product-1-195x141',
+						rating: ['', '', '', '', 'text-gray-13'],
+						title: 'Wood Cutting Machine',
+						price: '245'
+					})
+				.col-sm-6.col-lg-4.col-xl-3
+					+product({
+						img: 'product-2-195x141',
+						rating: ['', '', '', '', ''],
+						title: '3-Inch Faceplate',
+						price: '145',
+						new: true
+					})
+				.col-sm-6.col-lg-4.col-xl-3
+					+product({
+						img: 'product-3-195x141',
+						rating: ['', '', '', '', ''],
+						title: 'Benchtop Drill Press',
+						price: '235'
+					})
+				.col-sm-6.col-lg-4.col-xl-3
+					+product({
+						img: 'product-4-195x141',
+						rating: ['', '', '', '', 'text-gray-13'],
+						title: 'Tormek T4',
+						price: '248'
+					})
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

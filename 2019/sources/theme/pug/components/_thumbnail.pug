@@ -1,0 +1,39 @@
+mixin thumbnail-classic( obj )
+	// Thumbnail Classic
+	article.thumbnail.thumbnail-classic&attributes( attributes )
+		a.thumbnail-classic-figure( href='images/' + obj.imgOriginal + '.jpg', data-lightgallery='item' )
+			+img( obj.img )
+
+		.thumbnail-classic-caption
+			h6.thumbnail-classic-title: a( href= links.project )= obj.title
+			.thumbnail-classic-time
+				if( obj.time )
+					time( datetime= obj.time.datetime )= obj.time.datetext
+				else
+					time( datetime='2019-04-05' ) April 05, 2019
+
+mixin thumbnail-modern( obj )
+	// Thumbnail Modern
+	article.thumbnail.thumbnail-modern&attributes( attributes )
+		a.thumbnail-modern-figure( href='images/' + obj.imgOriginal + '.jpg', data-lightgallery='item' )
+			+img( obj.img )
+
+		.thumbnail-modern-caption
+			h5.thumbnail-modern-title: a( href= links.project )= obj.title
+			.thumbnail-modern-badge= obj.badge ? obj.badge : 'Latest Technology'
+
+mixin thumbnail-creative( obj )
+	// Thumbnail Creative
+	article.thumbnail.thumbnail-creative&attributes( attributes )
+		a( href='images/' + obj.imgOriginal + '.jpg', data-lightgallery='item' )
+			.thumbnail-creative-figure: +img( obj.img )
+			.thumbnail-creative-caption: span.icon.thumbnail-creative-icon.linearicons-magnifier
+
+mixin thumbnail-mary( obj )
+	// Thumbnail Mary
+	article.thumbnail.thumbnail-mary&attributes( attributes )
+		a.thumbnail-mary-figure( href='images/' + obj.imgOriginal + '.jpg', data-lightgallery='item' )
+			+img( obj.img )
+		.thumbnail-mary-caption: div
+			h6.thumbnail-mary-title: a( href= links.project )= obj.title
+			.thumbnail-mary-location= obj.location

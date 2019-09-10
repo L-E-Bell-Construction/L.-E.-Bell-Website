@@ -1,0 +1,97 @@
+-
+	var
+		htmlClass = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css?family=Roboto:100,300,400,500,900",
+		subscribeFormCounter = 0,
+		logo = {
+			default: { normal: 'logo-default-150x29', retina: 'logo-default-520x84' },
+			inverse: { normal: 'logo-inverse-150x29', retina: 'logo-inverse-520x84' },
+			name: 'Dynamics'
+		},
+		links = {
+			post: 'blog-post.html',
+			getTemplate:'https://www.templatemonster.com/website-templates/dynamics-industrial-multipage-html5-website-template-70384.html'
+		},
+		colors = {
+			primary: '#b6c062'
+		},
+		menu = [
+			{
+				title: 'Home',
+				category: 'home', 
+				link: 'index.html'
+			},
+			{
+				title: 'About',
+				category: 'about'
+			},
+			{
+			title: 'Blog',
+				category: 'blog',
+				dropdown: [
+					{
+						title: 'Blog post',
+						link: links.post
+					}
+				] 
+			},
+			{
+				title: 'Pages',
+				category: 'pages',
+				link: '#',
+				megamenu: [
+					{
+						title: 'Pages 1',
+						list: [
+							{ title: 'Typography' },
+							{ title: 'Buttons' },
+							{ title: 'Forms' },
+							{ title: 'Tabs and accordions' },
+							{ title: 'Progress bars' },
+							{ title: 'Tables' }
+						]
+					},
+					{
+						title: 'Pages 2',
+						list: [
+							{ title: 'Grid system' },
+							{ title: 'Privacy policy' },
+							{ title: 'Link 1' },
+							{ title: 'Link 1' },
+							{ title: 'Link 1' },
+							{ title: 'Link 1' }
+						]
+					},
+					{
+						title: 'Pages 3',
+						list: [
+							{ title: 'Under Construction' },
+							{ title: 'Link 1' },
+							{ title: 'Link 1' },
+							{ title: 'Link 1' },
+							{ title: 'Link 1' },
+							{ title: 'Search results' }
+						]
+					},
+					{
+						title: 'Plugins',
+						list: [
+							{ title: 'Header 1' },
+							{ title: 'Header 1' },
+							{ title: 'Header 1' },
+							{ title: 'Footer 1' },
+							{ title: 'Footer 1' },
+							{ title: 'Footer 1' }
+						]
+					}
+				]
+			},
+			{
+				title: 'Contacts',
+				category: 'contacts'
+			}
+		],
+	
+		// Predefined variables
+		activeCategory = 'home'
+		pageName = 'Home';

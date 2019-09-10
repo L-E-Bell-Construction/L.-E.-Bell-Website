@@ -1,0 +1,518 @@
+/*
+*
+* Layout panel
+*/
+
+
+
+$width-mobile: 260px;
+$width-desktop: 375px;
+
+$scrollbar-width: 4px;
+
+.layout-panel-wrap {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 600px;
+	height: 100vh;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: 1080;
+
+	&.active {
+
+		.layout-panel {
+			transform: translateX(0);
+		}
+
+		.layout-panel-inner:after {
+			box-shadow: -3px 0px 50px -2px rgba(0, 0, 0, 0.09);
+		}
+	}
+
+	.layout-panel-toggle,
+	.layout-panel-inner > * {
+		pointer-events: auto;
+	}
+
+	.button.button-ujarak:not([class*='button-secondary']) {
+		&::before { background: $secondary;	}
+
+		&:hover,
+		&:active { border-color: $secondary; }
+	}
+}
+
+.layout-panel {
+	width: auto;
+	transform: translateX($width-mobile + $scrollbar-width);
+	transition: .55s all ease;
+}
+
+// Scroll
+.layout-panel-content {
+	position: relative;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	width: 100%;
+	padding-right: $scrollbar-width;
+
+	.mCSB_outside + .mCSB_scrollTools {
+		right: 0;
+	}
+
+	.mCSB_scrollTools {
+		width: $scrollbar-width;
+		pointer-events: auto;
+	}
+
+	.mCSB_scrollTools .mCSB_dragger {
+		width: auto;
+	}
+
+	.mCSB_draggerContainer {
+		padding: 0;
+		background: $gray-300;
+	}
+
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+		width: $scrollbar-width;
+		background: rgba($primary, .5);
+	}
+
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+	.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+		background-color: rgba($primary, .5);
+	}
+
+	.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+	.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
+		background-color: rgba($primary, .5);
+	}
+}
+
+// Inner content
+.layout-panel-inner {
+	position: relative;
+	height: auto;
+	min-height: 100vh;
+	max-width: $width-mobile;
+	padding: 20px (20px - $scrollbar-width) 20px 20px;
+	background: $white;
+	margin-left: auto;
+	text-align: center;
+	pointer-events: auto;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		box-shadow: -3px 0px 50px -2px rgba(0, 0, 0, 0);
+		transition: .33s all ease;
+		z-index: -10;
+	}
+}
+
+.mobile, .tablet {
+	&.rd-navbar-fixed-linked {
+		.layout-panel-inner {
+			padding-bottom: 90px;
+		}
+	}
+}
+
+.layout-panel {
+
+	.isotope { margin-top: 0; }
+
+	* + .isotope { margin-top: 10px; }
+	
+
+	@include media-breakpoint-up(md) {
+
+		.isotope-filters-list {
+			margin-left: -15px;
+			margin-right: -15px;
+
+			> li {
+				padding: 0 15px;
+			}
+		}
+	}
+}
+
+.layout-panel-toggle {
+	@include reset-button;
+	position: absolute;
+	top: 22vh;
+	right: $width-mobile + 4px;
+	z-index: 10;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	background: $white;
+	color: $gray-800;
+	text-align: center;
+	box-shadow: -5px 1px 10px 0 rgba(0, 0, 0, 0.05);
+	border-right: 0;
+	transition: .55s all ease;
+
+	.mac-os & {
+		top: 232px;
+	}
+
+	&::before,
+	&::after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: $mdi;
+		font-size: 16px;
+		transition: .33s;
+	}
+
+	&::before {
+		content: '\f582';
+		opacity: 1;
+	}
+
+	&::after {
+		content: '\f24c';
+		opacity: 0;
+	}
+
+	&.active {
+		&::before { opacity: 0; }
+		&::after { opacity: 1; }
+	}
+
+
+	@include media-breakpoint-up(md) {
+		right: $width-desktop + 4px;
+	}
+}
+
+.layout-panel-main {
+	position: relative;
+	z-index: 11;
+
+	.isotope {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+
+	.isotope-item {
+		margin-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+
+
+		@include media-breakpoint-up(md) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+}
+
+* + .layout-panel-main { margin-top: 40px; }
+
+@include media-breakpoint-up(md) {
+	.layout-panel-toggle {
+		width: 54px;
+		height: 54px;
+		line-height: 54px;
+
+		&::before,
+		&::after {
+			font-size: 22px;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.layout-panel-wrap {
+		width: 780px;
+
+		.layout-panel {
+			transform: translateX($width-desktop + $scrollbar-width);
+		}
+
+		.layout-panel-inner {
+			max-width: $width-desktop;
+		}
+	}
+
+	&.ie-10,
+	&.ie-11 {
+		.layout-panel {
+			transform: translateX($width-desktop + $scrollbar-width);
+		}
+
+		.layout-panel-wrap {
+			&.active {
+				right: $scrollbar-width;
+			}
+		}
+	}
+}
+
+
+
+//
+// Theme Switcher List
+//
+.theme-switcher-list {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	@include group(5px);
+	line-height: 0;
+	font-size: 0;
+}
+
+* + .theme-switcher-list { margin-top: 15px; }
+
+.theme-switcher-list-item {
+	position: relative;
+	overflow: hidden;
+	@include reset-button();
+	width: 30px;
+	height: 30px;
+	font-size: 0;
+	cursor: pointer;
+	background: $primary;
+
+	&::before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+		content: '\f222';
+		font-family: $mdi;
+		font-size: 26px;
+		transition: .22s;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		color: $white;
+		text-shadow: 0 0 6px rgba($black, .2);
+		z-index: 2;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 150%;
+		width: 150%;
+		background: $secondary;
+		transform: rotate(-45deg);
+		transform-origin: 0 0;
+	}
+
+	&.active-theme {
+		&::before {
+			opacity: 1;
+			visibility: visible;
+		}
+
+	}
+}
+
+* + .layout-panel-title {	margin-top: 30px; }
+
+
+
+//
+// Thumbnail small
+//
+.thumbnail-small {
+	position: relative;
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 5px 5px 0;
+	transition: 0.3s ease;
+	color: $gray-800;
+	background-color: $gray-100;
+
+	&:hover {
+		color: $white;
+		border-color: $primary;
+		background-color: $primary;
+	}
+}
+
+.thumbnail-small-image {
+	position: relative;
+	overflow: hidden;
+
+	img {
+		height: auto;
+		width: 100%;
+	}
+}
+
+.thumbnail-small-hover-image {
+	display: none;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.thumbnail-small-caption {
+	position: relative;
+	padding: 5px;
+}
+
+.thumbnail-small-header {
+	position: relative;
+	z-index: 1;
+	font: 500 12px/18px $font-family-base;
+	letter-spacing: .1em;
+	color: inherit;
+}
+
+@include media-breakpoint-up(lg) {
+	.desktop {
+		.thumbnail-small-hover-image {
+			display: block;
+			position: absolute;
+			left: -10px;
+			top: 50%;
+			z-index: 11;
+			transform: translate(-120%, -60%);
+			transition: .33s all ease;
+			width: 380px * .9;
+			height: 280px * .9;
+			background: $white;
+			padding: 7px;
+			box-shadow: -3px 0px 50px -2px rgba(0, 0, 0, 0.14);
+			opacity: 0;
+			pointer-events: none;
+
+			img {
+				position: relative;
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				z-index: -1000;
+				transform: translateY(-50%) rotate(45deg);
+				right: -11px;
+				width: 24px;
+				height: 24px;
+				background: $white;
+				box-shadow: -3px 0px 45px -2px rgba(0, 0, 0, 0.13);
+			}
+		}
+
+		.thumbnail-small {
+			&:hover {
+				.thumbnail-small-caption:after {
+					bottom: 0;
+					opacity: 1;
+				}
+
+				.thumbnail-small-header {
+					color: $white;
+				}
+
+				.thumbnail-small-image {
+					&:after {
+						opacity: 0;
+					}
+				}
+
+				.thumbnail-small-hover-image {
+					z-index: 12;
+					opacity: 1;
+					transform: translate(-100%, -60%);
+				}
+			}
+		}
+	}
+}
+
+
+
+.theme-switcher-list-item[data-theme-name='gas-and-oil'] {
+	@import "../color-scheme/colors-default";
+	background: $primary;
+
+	&::after {
+		background: $secondary;
+	}
+}
+
+.theme-switcher-list-item[data-theme-name='mining'] {
+	@import "../color-scheme/colors-1";
+	background: $primary;
+
+	&::after {
+		background: $secondary;
+	}
+}
+
+.theme-switcher-list-item[data-theme-name='welding'] {
+	@import "../color-scheme/colors-2";
+	background: $primary;
+
+	&::after {
+		background: $secondary;
+	}
+}
+
+.theme-switcher-list-item[data-theme-name='steelworks'] {
+	@import "../color-scheme/colors-3";
+	background: $primary;
+
+	&::after {
+		background: $secondary;
+	}
+}
+
+.theme-switcher-list-item[data-theme-name='cement'] {
+	@import "../color-scheme/colors-4";
+	background: $primary;
+
+	&::after {
+		background: $secondary;
+	}
+}
+
+.theme-switcher-list-item[data-theme-name='civil-engineering'] {
+	@import "../color-scheme/colors-5";
+	background: $primary;
+
+	&::after {
+		background: $secondary;
+	}
+}
+
+.theme-switcher-list-item[data-theme-name='woodworking'] {
+	@import "../color-scheme/colors-6";
+	background: $primary;
+
+	&::after {
+		background: $secondary;
+	}
+}

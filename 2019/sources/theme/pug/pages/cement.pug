@@ -1,0 +1,600 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-creative
+include ../sections/_footer-corporate
+include ../components/_box-services
+include ../components/_card
+include ../components/_thumbnail
+include ../components/_counters
+include ../components/_quote
+include ../components/_box-icon
+include ../components/_box-team
+include ../components/_posts
+
+block variables
+	-
+		var
+			pageName = 'Cement',
+			style = '4';
+
+		logo = {
+			default: 'logo-default-4-310x46.png',
+			inverse: 'logo-inverse-4-310x46.png',
+			name: 'Atlas'
+		};
+
+block page
+
+	// Page Header and Swiper
+	section.section.swiper-custom-container.swiper-custom-container-2
+		+navbar-creative.context-dark
+
+		include ../sections/_section-slider-4
+
+		// Swiper Pagination
+		.swiper-pagination.swiper-pagination-2
+
+		ul.list-share-2
+			li: a.icon.mdi.mdi-facebook( href='#' )
+			li: a.icon.mdi.mdi-twitter( href='#' )
+			li: a.icon.mdi.mdi-instagram( href='#' )
+			li: a.icon.mdi.mdi-google-plus( href='#' )
+
+		.swiper-custom-bg(style='background-image: url(images/bg-index-5.jpg);' )
+
+
+	// Section Services
+	section.section.section-inset-4.section-fluid.bg-default.text-md-left
+		.container
+			+title-panel({
+				modGroup: 'justify-content-sm-between',
+				title: 'Our services',
+				owlNav: '1'
+			})
+
+		.container-fluid
+			.owl-carousel( data-items='1', data-sm-items='2', data-lg-items='3', data-xl-items='4', data-margin='30', data-mouse-drag='false', data-navigation-class='#owl-custom-nav-1' )
+				+services-rose({
+					img: 'cement/services-1-420x320',
+					title: 'Cement <br>mixing '
+				}).block-md.wow.fadeInUp
+				+services-rose({
+					img: 'cement/services-2-420x320',
+					title: 'Concrete <br>paving'
+				}).block-md.wow.fadeInUp( data-wow-delay='.05s' )
+				+services-rose({
+					img: 'cement/services-3-420x320',
+					title: 'Monolithic <br>floors'
+				}).block-md.wow.fadeInUp( data-wow-delay='.1s' )
+				+services-rose({
+					img: 'cement/services-4-420x320',
+					title: 'Construction'
+				}).block-md.wow.fadeInUp( data-wow-delay='.15s' )
+
+
+	// Our advantages
+	section.section.section-md.section-inset-2.bg-image-1.context-dark.text-left.section-relative
+		.container
+			.row.row-60.justify-content-center.justify-content-xxl-between
+				.col-md-9.col-lg-6.position-static.index-1
+					.bg-image-left-lg.bg-image-left-1
+						+img( 'cement/video-1-1110x830' )
+						.link-play-creative.link-play-creative-2
+							a.icon.mdi.mdi-play( data-lightgallery='item', href='https://www.youtube.com/watch?v=1UWpbtUupQQ' )
+							h6.link-play-creative-title.wow.fadeInRight Video presentation of the company
+							.link-play-creative-decor.wow.slideInUp
+						.box-transform( style='background-image: url(images/cement/video-1-1110x830.jpg);' )
+
+				.col-lg-6.position-static
+					.inset-left-lg-15.inset-left-xl-70
+						h6.subtitle-creative.d-inline-block
+							span.d-inline-block.wow.slideInLeft Why choose us
+							span.title-creative-decor.wow.slideInRight
+						h3.title-creative.oh-desktop: span.d-inline-block.wow.slideInDown Our advantages
+						#accordion5.card-group-custom.card-group-corporate( role='tablist', aria-multiselectable='false' )
+							+card({
+								show: true,
+								parentId: 'accordion5',
+								title: 'We have 30 plus years in the building industry'
+							}).card-corporate.wow.fadeInLeft
+								p Since 1983, we have been supplying the world with high-quality Portland cement as well as other concrete and monolithic solutions designed to last for hundreds of years.
+							+card({
+								parentId: 'accordion5',
+								title: 'Quality from start to finish'
+							}).card-corporate.wow.fadeInLeft
+								p We are dedicated to providing absolute quality to all our customers, from individual to corporate ones. No matter what you use our cement solutions for, you won’t regret.
+							+card({
+								parentId: 'accordion5',
+								title: 'Employees are continually trained on safety'
+							}).card-corporate.wow.fadeInLeft
+								p Our huge, experienced, and friendly team is constantly trained to match the industry safety standards. Every one of us makes sure to strictly follow the safety measures.
+							+card({
+								parentId: 'accordion5',
+								title: 'We use technology to do the job more quickly'
+							}).card-corporate.wow.fadeInLeft
+								p Our works depends on the innovative technology we use during cement production. It is the key to customer satisfaction with the high quality of our products.
+
+	// About Our Company
+	section.section.section-xl.bg-default
+		#tabs-10.container.tabs-custom
+			+title-panel({
+				modGroup: 'text-center text-lg-left justify-content-center justify-content-lg-between',
+				title: '925 projects <span class="text-gray-21 font-weight-regular">since 1983</span>',
+				list: [
+					{id: '#tabs-10-1', text: '2019', class: 'active'},
+					{id: '#tabs-10-2', text: '2018'},
+					{id: '#tabs-10-3', text: '2017'}
+				]
+			})
+
+			// Tab panes
+			.tab-content
+				#tabs-10-1.tab-pane.fade.show.active
+					.isotope-wrap: .row.row-30.isotope( data-lightgallery='group' )
+						.col-sm-6.col-md-4.col-xl-3.isotope-item: .oh-desktop
+							+thumbnail-mary({
+								img: 'cement/project-1-270x220',
+								imgOriginal: 'cement/project-1-1200x800-original',
+								title: 'Bowman International, HQ',
+								location: 'Washington, Dc'
+							}).block-3.wow.slideInLeft
+						.col-sm-6.col-md-4.col-xl-3.isotope-item: .oh-desktop
+							+thumbnail-mary({
+								img: 'cement/project-2-270x220',
+								imgOriginal: 'cement/project-2-1200x800-original',
+								title: 'Serenade Hotel',
+								location: 'Chicago, IL'
+							}).block-3.wow.slideInRight
+						.col-md-8.col-xl-6.isotope-item: .oh-desktop
+							+thumbnail-mary({
+								img: 'cement/project-3-570x470',
+								imgOriginal: 'cement/project-3-1200x800-original',
+								title: 'Wilson Business Center',
+								location: 'Dallas, TX'
+							}).thumbnail-mary-big.block-3.wow.slideInLeft
+						.col-sm-6.col-md-4.col-xl-3.isotope-item: .oh-desktop
+							+thumbnail-mary({
+								img: 'cement/project-4-270x220',
+								imgOriginal: 'project-3-1200x800-original',
+								title: 'Fowler Records',
+								location: 'Atlanta, GA'
+							}).block-3.wow.slideInDown
+						.col-sm-6.col-md-4.col-xl-3.isotope-item: .oh-desktop
+							+thumbnail-mary({
+								img: 'cement/project-5-270x470',
+								imgOriginal: 'cement/project-5-1200x800-original',
+								title: 'Diamond photo studio',
+								location: 'Miami, FL'
+							}).block-3.wow.slideInRight
+						.col-sm-6.col-md-4.col-xl-3.isotope-item: .oh-desktop
+							+thumbnail-mary({
+								img: 'cement/project-6-270x220',
+								imgOriginal: 'cement/project-6-1200x800-original',
+								title: '123 supermarket',
+								location: 'seattle, WA'
+							}).block-3.wow.slideInUp
+						.col-sm-6.col-md-4.col-xl-3.isotope-item: .oh-desktop
+							+thumbnail-mary({
+								img: 'cement/project-7-270x220',
+								imgOriginal: 'cement/project-7-1200x800-original',
+								title: 'iCup coworking',
+								location: 'los angeles, CA'
+							}).block-3.wow.slideInUp
+						.col-sm-6.col-md-4.col-xl-3.isotope-item: .oh-desktop
+							+thumbnail-mary({
+								img: 'cement/project-8-270x220',
+								imgOriginal: 'cement/project-8-1200x800-original',
+								title: 'State Concert Hall',
+								location: 'New York, NY'
+							}).block-3.wow.slideInDown
+
+				#tabs-10-2.tab-pane.fade
+					.isotope-wrap: .row.row-30.isotope( data-lightgallery='group' )
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-12-270x470',
+								imgOriginal: 'cement/project-12-1200x800-original',
+								title: 'Diamond photo studio',
+								location: 'Miami, FL'
+							}).block-3
+						.col-md-8.col-xl-6.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-9-570x470',
+								imgOriginal: 'cement/project-9-1200x800-original',
+								title: 'Wilson Business Center',
+								location: 'Dallas, TX'
+							}).thumbnail-mary-big.block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-10-270x220',
+								imgOriginal: 'cement/project-10-1200x800-original',
+								title: 'Bowman International, HQ',
+								location: 'Washington, Dc'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-11-270x220',
+								imgOriginal: 'cement/project-11-1200x800-original',
+								title: 'Serenade Hotel',
+								location: 'Chicago, IL'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-13-270x220',
+								imgOriginal: 'grid-gallery-1-1200x800-original',
+								title: 'Fowler Records',
+								location: 'Atlanta, GA'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-14-270x220',
+								imgOriginal: 'grid-gallery-7-1200x800-original',
+								title: '123 supermarket',
+								location: 'seattle, WA'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-15-270x220',
+								imgOriginal: 'cement/project-15-1200x800-original',
+								title: 'iCup coworking',
+								location: 'los angeles, CA'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-16-270x220',
+								imgOriginal: 'cement/project-16-1200x800-original',
+								title: 'State Concert Hall',
+								location: 'New York, NY'
+							}).block-3
+
+				#tabs-10-3.tab-pane.fade
+					.isotope-wrap: .row.row-30.isotope( data-lightgallery='group' )
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-17-270x220',
+								imgOriginal: 'cement/project-17-1200x800-original',
+								title: 'Bowman International, HQ',
+								location: 'Washington, Dc'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-18-270x470',
+								imgOriginal: 'cement/project-18-1200x800-original',
+								title: 'Diamond photo studio',
+								location: 'Miami, FL'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-19-270x220',
+								imgOriginal: 'cement/project-19-1200x800-original',
+								title: 'Serenade Hotel',
+								location: 'Chicago, IL'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-20-270x220',
+								imgOriginal: 'cement/project-20-1200x800-original',
+								title: 'Fowler Records',
+								location: 'Atlanta, GA'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-21-270x220',
+								imgOriginal: 'cement/project-21-1200x800-original',
+								title: '123 supermarket',
+								location: 'seattle, WA'
+							}).block-3
+						.col-md-8.col-xl-6.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-22-570x470',
+								imgOriginal: 'cement/project-22-1200x800-original',
+								title: 'Wilson Business Center',
+								location: 'Dallas, TX'
+							}).thumbnail-mary-big.block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-23-270x220',
+								imgOriginal: 'grid-gallery-2-1200x800-original',
+								title: 'iCup coworking',
+								location: 'los angeles, CA'
+							}).block-3
+						.col-sm-6.col-md-4.col-xl-3.isotope-item
+							+thumbnail-mary({
+								img: 'cement/project-24-270x220',
+								imgOriginal: 'cement/project-24-1200x800-original',
+								title: 'State Concert Hall',
+								location: 'New York, NY'
+							}).block-3
+
+
+	// Counter Aria
+	section.section.section-md.bg-image-1
+		.container
+			.row.row-30.justify-content-center.justify-content-lg-around
+				.col-6.col-sm-4.col-lg-3
+					+counter-aria({
+						number: '25',
+						title: 'Awards'
+					})
+				.col-6.col-sm-4.col-lg-3
+					+counter-aria({
+						number: '101',
+						title: 'Projects'
+					})
+				.col-6.col-sm-4.col-lg-3
+					+counter-aria({
+						number: '34',
+						title: 'Staff members'
+					})
+
+
+	// About our production
+	section.section.section-xl.bg-default
+		.container
+			+title-panel({
+				modGroup: 'text-center text-lg-left justify-content-center justify-content-lg-between',
+				title: 'About our production'
+			})
+			.row.row-md.row-50.justify-content-lg-between
+				.col-lg-5: .row.row-30.align-items-center.justify-content-center
+					.col-sm-10.col-md-6.col-lg-11.col-xl-12
+						+quote-ella({
+							text: 'At Atlas, we produce a wide variety of cement and concrete products and offer lots of supplementary services to our customers.'
+						})
+
+					.col-sm-10.col-md-6.col-lg-11.col-xl-12
+						// Owl Carousel
+						.owl-carousel.dots-style-4( data-items='1', data-dots='true', data-autoplay='true' )
+							+img( 'cement/about-1-418x314' )
+							+img( 'cement/about-2-418x314' )
+							+img( 'cement/about-3-418x314' )
+
+				.col-lg-7.col-xl-6
+					.row.row-30.row-md-50
+						.col-sm-6.wow.fadeInRight
+							+box-icon-erin({
+								title: 'Quality Control',
+								text: 'The quality of our products and solutions is strictly controlled.'
+							})
+								+svg-icon-1
+						.col-sm-6.wow.fadeInRight( data-wow-delay='.1s' )
+							+box-icon-erin({
+								title: 'Powerful Equipment',
+								text: 'Atlas is equipped with powerful cement production equipment.'
+							})
+								+svg-icon-2
+						.col-sm-6.wow.fadeInRight
+							+box-icon-erin({
+								title: 'Skilled experts',
+								text: 'Our skilled team is aimed to deliver the best results.'
+							})
+								+svg-icon-3
+						.col-sm-6.wow.fadeInRight( data-wow-delay='.1s' )
+							+box-icon-erin({
+								title: 'Modern materials',
+								text: 'We use modern sustainable materials during manufacture.'
+							})
+								+svg-icon-4
+			.owl-carousel.owl-style-9.owl-style-10( data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-margin='30', data-autoplay='true', data-nav='true' )
+				a.clients-jean( href='#' ): +img( 'clients-2-200x90.png' )
+				a.clients-jean( href='#' ): +img( 'clients-4-200x90.png' )
+				a.clients-jean( href='#' ): +img( 'clients-6-200x90.png' )
+				a.clients-jean( href='#' ): +img( 'clients-22-200x90.png' )
+				a.clients-jean( href='#' ): +img( 'clients-3-200x90.png' )
+				a.clients-jean( href='#' ): +img( 'clients-23-200x90.png' )
+
+
+	// Team of professionals
+	section.section.section-xl.bg-image-1.context-dark.text-md-left
+		.container
+			+title-panel({
+				modGroup: 'justify-content-md-between',
+				title: 'Team of professionals',
+				button: 'View all team',
+				classButton: 'button-outline button-default-outline-2'
+			})
+
+			.owl-carousel.owl-style-6.dots-style-2( data-items='1', data-sm-items='2', data-lg-items='3', data-margin='30', data-dots='true', data-mouse-drag='false', data-animation-in='fadeIn', data-animation-out='fadeOut' )
+				+team-ruth({
+					unit: 'flex-sm-column flex-md-row',
+					title: 'Founder & CEO',
+					img: 'team-34-167x162',
+					name: 'John Smith',
+					text: 'John Smith is the leading team member, CEO, and founder of our cement plant.'
+				}).text-sm-center.text-md-left.wow.fadeInUp( data-wow-delay='.1s' )
+				+team-ruth({
+					unit: 'flex-sm-column flex-md-row',
+					title: 'Chief Engineer',
+					img: 'team-35-167x162',
+					name: 'Jacob Williams',
+					text: 'Mr. Williams has been managing most of our  engineering projects since 2011.'
+				}).text-sm-center.text-md-left.wow.fadeInUp
+				+team-ruth({
+					unit: 'flex-sm-column flex-md-row',
+					title: 'Safety Supervisor',
+					img: 'team-36-167x162',
+					name: 'Stephen Adams',
+					text: 'Stephen’s main task is to maintain the compliance with the safety regulations.'
+				}).text-sm-center.text-md-left.wow.fadeInUp( data-wow-delay='.1s' )
+
+
+	// Our blog
+	section.section.section-xl.bg-default
+		#tabs-11.container.tabs-custom.tabs-custom-1
+			+title-panel({
+				modGroup: 'justify-content-md-between',
+				title: 'Our blog',
+				list: [
+					{id: '#tabs-11-1', text: 'Latest', class: 'active'},
+					{id: '#tabs-11-2', text: 'Popular'}
+				]
+			})
+
+			// Tab panes
+			.tab-content
+				#tabs-11-1.tab-pane.fade.show.active
+					.isotope-wrap: .row.row-30.isotope( data-lightgallery='group' )
+						.col-sm-6.col-md-5.col-lg-3.isotope-item: .oh-desktop
+							+post-modern({
+								tag: 'Construction',
+								title: 'Latest Construction Trends You Should Be Aware Of'
+							}).post-modern-quote.block-3.wow.slideInUp
+						.col-sm-6.col-md-5.col-lg-3.isotope-item: .oh-desktop
+							+post-modern({
+								video: 'https://www.youtube.com/watch?v=1UWpbtUupQQ',
+								img: 'post-8-270x247',
+								title: 'What Quality Service Means to Us'
+							}).post-modern-2.post-modern-6.block-3.wow.slideInRight
+						.col-md-10.col-lg-6.isotope-item: .oh-desktop
+							+post-modern-big({
+								tag: 'Industry news',
+								imgLink: 'post-12-570x316',
+								title: 'We Won Best Industry Services Award 2019'
+							}).block-3.wow.slideInLeft
+						.col-md-10.col-lg-6.isotope-item: .oh-desktop
+							+post-modern-horizontal({
+								tag: 'Equipment',
+								img: 'post-9-195x191',
+								title: 'Best Construction Equipment: Our Choice'
+							}).post-modern-4.block-3.wow.slideInDown
+
+				#tabs-11-2.tab-pane.fade
+					.isotope-wrap: .row.row-30.isotope( data-lightgallery='group' )
+						.col-sm-6.col-md-5.col-lg-3.isotope-item
+							+post-modern({
+								img: 'post-10-270x247',
+								title: 'What Quality Service Means to Us'
+							}).post-modern-2.block-3
+						.col-sm-6.col-md-5.col-lg-3.isotope-item
+							+post-modern({
+								tag: 'Construction',
+								title: 'Latest Construction Trends You Should Be Aware Of'
+							}).block-3
+						.col-md-10.col-lg-6.isotope-item
+							+post-modern-big({
+								tag: 'Industry news',
+								img: 'post-7-570x528',
+								title: 'We Won Best Industry Services Award 2019'
+							}).post-modern-3.block-3
+						.col-md-10.col-lg-6.isotope-item
+							+post-modern-horizontal({
+								tag: 'Equipment',
+								img: 'post-11-195x191',
+								title: 'Best Construction Equipment: Our Choice'
+							}).post-modern-4.block-3
+
+
+	section.section.bg-default
+		+parallax-block({
+			img: 'bg-index-13',
+			innerClass: 'section-xl context-dark text-sm-left'
+		})
+			.container
+				.row.row-50.align-items-center.justify-content-center
+					.col-lg-5.col-xl-6.d-none.d-lg-block: +img( 'index-5-570x394' )
+					.col-md-11.col-lg-7.col-xl-6: .inset-left-lg-15.inset-left-xl-40
+						h6.subtitle-creative.d-inline-block
+							span.d-inline-block.wow.slideInLeft What people say
+							span.title-creative-decor.wow.slideInRight
+						h3.title-creative.oh-desktop: span.d-inline-block.wow.slideInDown Testimonials
+
+						.group-xl.group-justify.align-items-end
+							#slick-1-fraction.slick-fraction
+								span.slick-fraction-current
+								span.slick-fraction-divider=' / '
+								span.slick-fraction-all
+							.custom-arrows-4
+
+						.slick-slider.slick-style-1#child-carousel-4( data-loop='true', data-for='.carousel-parent', data-items='1', data-slide-to-scroll='1', data-fraction='#slick-1-fraction', data-sm-vertical='true', data-md-vertical='true', data-lg-vertical='true', data-xl-vertical='true' )
+							.item: .quote-paris-info
+								h5.quote-paris-title STC Business Center
+								time.quote-paris-time( datetime='2019-04-20' ) April 20, 2019
+							.item: .quote-paris-info
+								h5.quote-paris-title Magnolia Hotel
+								time.quote-paris-time( datetime='2019-04-20' ) April 20, 2019
+							.item: .quote-paris-info
+								h5.quote-paris-title Mexican Community Center
+								time.quote-paris-time( datetime='2019-04-20' ) April 20, 2019
+							.item: .quote-paris-info
+								h5.quote-paris-title Try&Buy Mart
+								time.quote-paris-time( datetime='2019-04-20' ) April 20, 2019
+
+		.container
+			// Slick Carousel
+			.slick-slider.carousel-parent.slick-style-2( data-loop='true', data-autoplay='true', data-swipe='true', data-items='1', data-child='#child-carousel-4', data-for='#child-carousel-4', data-arrows='true', data-arrows-class='.custom-arrows-4', data-sm-vertical='true', data-md-vertical='true', data-lg-vertical='true', data-xl-vertical='true' )
+				.item
+					+quote-paris({
+						text: 'You are one of the most reliable cement providers.',
+						text2: 'Atlas provided us with a great service and they did a wonderful job of reconstructing our business center with their sustainable cement that hasn’t lost its qualities over the years.',
+						author: 'James Peterson'
+					})
+				.item
+					+quote-paris({
+						text: 'Your team is very qualified, supportive, and one-of-a-kind!',
+						text2: 'Atlas has a very helpful, friendly and reliable team and they also engage with us regularly on social media, which is helping to raise our profile. Of course I would recommend them.',
+						author: 'Ann Rodriguez'
+					})
+				.item
+					+quote-paris({
+						text: 'Atlas is the most responsible cement manufacturer.',
+						text2: 'Atlas’s service is spot on. When we needed some additional services for the construction of our community center, they provided us with everything necessary.',
+						author: 'Sam Goodwin'
+					})
+				.item
+					+quote-paris({
+						text: 'Atlas always delivers its cement on time and without delays.',
+						text2: 'When we place an order, we get a specific date and time for delivery, we receive a prompt acknowledgment – and the cement arrives on time and exactly as we ordered. This is amazing!',
+						author: 'Peter Newton'
+					})
+
+
+	// Request A Quote
+	+parallax({
+		img: 'bg-forms-2',
+		innerClass: 'section-xl context-dark form-default text-sm-left'
+	})
+		.container
+			+title-panel({
+				modGroup: 'justify-content-sm-start',
+				title: 'Request A Quote'
+			}).title-panel-2
+
+			.row.row-sm.justify-content-center.justify-content-sm-start: .col-sm-8.col-md-7.col-lg-5
+				//- Contact forms
+				form.rd-form.rd-form-2.rd-mailform.text-sm-left( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+					.form-wrap.wow.fadeInLeft
+						input#contact-name-7.form-input( type='text', name='name', data-constraints='@Required' )
+						label.form-label( for='contact-name-7' ) Your Name*
+					.form-wrap.wow.fadeInLeft( data-wow-delay='.05s' )
+						input#contact-email-7.form-input( type='email', name='email', data-constraints='@Email @Required' )
+						label.form-label( for='contact-email-7' ) Your E-mail*
+					.form-wrap.wow.fadeInLeft( data-wow-delay='.15s' )
+						//Select 2
+						select.form-input( data-minimum-results-for-search='Infinity', data-constraints='@Required' )
+							option( value='1' ) Select a Service
+							option( value='2' ) Cement Mixing
+							option( value='3' ) Construction
+							option( value='4' ) Concrete Paving
+					.form-wrap.wow.fadeInLeft( data-wow-delay='.2s' )
+						input.form-input( id='contact-phone-7', type='text', name='phone', data-constraints='@Numeric' )
+						label.form-label( for='contact-phone-7' ) Phone
+
+					button.button.button-secondary.button-shadow.button-winona.wow.fadeInLeft( type='submit', data-wow-delay='.25s' ) Get in touch
+
+
+	// Page Footer
+	+footer-corporate({
+		text: 'Atlas is the worldwide recognized manufacturer of Portland cement and concrete solutions of the highest quality.',
+		list: [
+			{ text: 'Our History', href: 'about-us.html' },
+			{ text: 'FAQ' },
+			{ text: 'Latest News', href: 'grid-blog.html' },
+			{ text: 'Shop', href: 'shop.html' },
+			{ text: 'Contact Us', href: 'contacts.html' },
+			{ text: 'Construction' },
+			{ text: 'Monolithic Floors' },
+			{ text: 'Cements' },
+			{ text: 'Concrete' }
+		]
+	})

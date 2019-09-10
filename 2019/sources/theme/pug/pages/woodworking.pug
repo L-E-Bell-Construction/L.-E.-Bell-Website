@@ -1,0 +1,466 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-modern
+include ../sections/_footer-modern
+include ../components/_thumbnail
+include ../components/_box-icon
+include ../components/_box-services
+include ../components/_quote
+include ../components/_box-team
+include ../components/_posts
+include ../components/_counters
+include ../components/_product
+
+block variables
+	-
+		var
+			pageName = 'Woodworking',
+			style = '6';
+
+		logo = {
+			default: 'logo-default-6-477x89.png',
+			inverse: 'logo-inverse-6-477x89.png',
+			name: 'Woodcraft'
+		};
+
+block page
+	// Page Header
+	+navbar-modern
+		.col-6
+			+thumbnail-creative({
+				img: 'woodworking/project-1-195x164',
+				imgOriginal: 'woodworking/project-1-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'woodworking/project-2-195x164',
+				imgOriginal: 'woodworking/project-2-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'woodworking/project-3-195x164',
+				imgOriginal: 'woodworking/project-3-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'woodworking/project-4-195x164',
+				imgOriginal: 'woodworking/project-4-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'woodworking/project-5-195x164',
+				imgOriginal: 'woodworking/project-5-1200x800-original'
+			})
+		.col-6
+			+thumbnail-creative({
+				img: 'woodworking/project-6-195x164',
+				imgOriginal: 'woodworking/project-6-1200x800-original'
+			})
+
+	// Swiper
+	include ../sections/_section-slider-6
+
+	// Section Services
+	section.section.section-sm.bg-default
+		.container
+			.owl-carousel.owl-style-11.dots-style-2( data-items='1', data-sm-items='2', data-lg-items='3', data-xl-items='4', data-margin='30', data-dots='true', data-mouse-drag='false' )
+				+box-icon-megan({
+					icon: 'linearicons-cog icon-46',
+					title: 'Modern Equipment',
+					text: 'Woodcraft uses the latest equipment to create the best wooden products in the USA.'
+				}).block-3.wow.fadeInUp
+				+box-icon-megan({
+					icon: 'linearicons-pencil-ruler',
+					title: 'Creative Projects',
+					text: 'We design & craft highly creative products for our customers worldwide.'
+				}).block-3.wow.fadeInUp( data-wow-delay='.05s' )
+				+box-icon-megan({
+					icon: 'linearicons-pine-tree icon-53',
+					title: 'Quality Materials',
+					text: 'Our wooden products are manufactured from high-quality hardwoods.'
+				}).block-3.wow.fadeInUp( data-wow-delay='.1s' )
+				+box-icon-megan({
+					icon: 'linearicons-thumbs-up',
+					title: 'Talented Craftsmen',
+					text: 'Our team consists of experienced craftsmen and carpenters'
+				}).block-3.wow.fadeInUp( data-wow-delay='.15s' )
+
+
+	// Section CTA
+	+parallax({
+		img: 'bg-cta-2',
+		innerClass: 'section-xl context-dark text-md-left'
+	})
+		.container: .row.justify-content-end: .col-sm-8.col-md-7.col-lg-5
+			.cta-modern
+				h4.cta-modern-title.wow.fadeInRight Wood is what we work with, and we always find the best trees for you!
+				p.cta-modern-text.oh-desktop( data-wow-delay='.1s' )
+					span.cta-modern-decor.wow.slideInLeft
+					span.d-inline-block.wow.slideInDown Ben Smith, Founder
+				a.button.button-lg.button-primary.button-winona.wow.fadeInUp( href= links.services, data-wow-delay='.2s' ) Our services
+
+
+	// What We Offer
+	section.section.section-xl.bg-default
+		.container
+			h3.oh-desktop: span.d-inline-block.wow.slideInDown What We Offer
+			.row.row-xl.row-30
+				.col-sm-6.col-lg-4: .oh-desktop
+					+services-terri({
+						img: 'woodworking/service-1-370x278',
+						icon: 'linearicons-pencil-ruler2',
+						title: 'Design Services'
+					}).wow.slideInUp
+				.col-sm-6.col-lg-4: .oh-desktop
+					+services-terri({
+						img: 'woodworking/service-2-370x278',
+						icon: 'linearicons-home4',
+						title: 'Home Renovation'
+					}).wow.slideInDown
+				.col-sm-6.col-lg-4: .oh-desktop
+					+services-terri({
+						img: 'woodworking/service-3-370x278',
+						icon: 'linearicons-hammer-wrench icon-50',
+						title: 'Joinery Services'
+					}).wow.slideInUp
+				.col-sm-6.col-lg-4: .oh-desktop
+					+services-terri({
+						img: 'woodworking/service-4-370x278',
+						icon: 'linearicons-palette',
+						title: 'Painting Services'
+					}).wow.slideInDown
+				.col-sm-6.col-lg-4: .oh-desktop
+					+services-terri({
+						img: 'woodworking/service-5-370x278',
+						icon: 'linearicons-couch',
+						title: 'Furniture Manufacture'
+					}).wow.slideInUp
+				.col-sm-6.col-lg-4: .oh-desktop
+					+services-terri({
+						img: 'woodworking/service-6-370x278',
+						icon: 'linearicons-layers icon-50',
+						title: 'Custom Woodwork'
+					}).wow.slideInDown
+
+
+	// Our History
+	section.section.section-lg.bg-image-2.text-left.section-relative
+		.container
+			.row.row-60.justify-content-center.justify-content-xxl-between
+				.col-lg-6.col-xxl-5.position-static
+					h3.oh-desktop: span.d-inline-block.wow.slideInUp Our history
+					#tabs-5.tabs-custom
+						.tab-content.tab-content-1
+							#tabs-5-1.tab-pane.fade
+								h5.font-weight-normal.text-transform-none.text-spacing-75 The beginning of Woodcraft and our first products
+								p We started Woodcraft in 1980 as a small carpentry business offering woodworking & custom furniture manufacturing services to local residents.
+							#tabs-5-2.tab-pane.fade
+								h5.font-weight-normal.text-transform-none.text-spacing-75 National expansion and promotion of our services
+								p In 1995, we achieved greater success that we could ever dream of, as we started offering our services nationally to businesses and individual clients all over the US.
+							#tabs-5-3.tab-pane.fade
+								h5.font-weight-normal.text-transform-none.text-spacing-75 Opening new offices in European countries
+								p We started our globalization in XXI century with opening two new offices in Netherlands and Spain, where our carpentry services proved to be very called-for.
+							#tabs-5-4.tab-pane.fade.show.active
+								h5.font-weight-normal.text-transform-none.text-spacing-75.wow.fadeInRight Recognition of sustainable woodworking solutions
+								p.wow.fadeInRight( data-wow-delay='.1s' ) Today we are recognized as the #1 woodworking company with full equipment line for wood processing, custom cabinetry manufacturing, and global supply chain.
+
+						.list-history-wrap: ul.nav.list-history
+							li.list-history-item( role='presentation' ): a( href='#tabs-5-1', data-toggle='tab' )
+								.list-history-circle
+								| 1980
+							li.list-history-item( role='presentation' ): a( href='#tabs-5-2', data-toggle='tab' )
+								.list-history-circle
+								| 1995
+							li.list-history-item( role='presentation' ): a( href='#tabs-5-3', data-toggle='tab' )
+								.list-history-circle
+								| 2006
+							li.list-history-item( role='presentation' ): a.active( href='#tabs-5-4', data-toggle='tab' )
+								.list-history-circle
+								| 2019
+				.col-md-9.col-lg-6.position-static.index-1
+					.bg-image-right-1.bg-image-right-lg
+						+img( 'woodworking/about-1-1110x710' )
+						.link-play-modern
+							a.icon.mdi.mdi-play( data-lightgallery='item', href='https://www.youtube.com/watch?v=1UWpbtUupQQ' )
+							.link-play-modern-title How we
+								span Work
+							.link-play-modern-decor
+						.box-transform( style='background-image: url(images/woodworking/about-1-1110x710.jpg);' )
+
+
+	// What We Offer
+	section.section.section-xl.bg-default
+		.container
+			h3.wow.fadeInLeft What People Say
+		.container.container-style-1: .owl-carousel.owl-style-12( data-items='1', data-sm-items='2', data-lg-items='3', data-margin='30', data-xl-margin='45', data-autoplay='true', data-nav='true', data-center='true', data-smart-speed='400' )
+			+quote-tara({
+				text: 'I was not disappointed with Woodcraft, as they addressed every detail of my project in a very professional manner. I appreciate it a lot.',
+				img: 'user-6-115x115',
+				author: 'Bill Johnson',
+				status: 'Client'
+			})
+			+quote-tara({
+				text: 'I feel very lucky to have Woodcraft to rely on for custom casework and cabinetry. They did a great job on two projects for my family.',
+				img: 'user-7-115x115',
+				author: 'Sam Fitzgerald',
+				status: 'Client'
+			})
+			+quote-tara({
+				text: 'As a professional Interior Designer and a new homeowner, I recommend these guys for their consistent, quality workmanship.',
+				img: 'user-8-115x115',
+				author: 'Stephanie Williams',
+				status: 'Client'
+			})
+			+quote-tara({
+				text: 'I was not disappointed with Woodcraft, as they addressed every detail of my project in a very professional manner. I appreciate it a lot.',
+				img: 'user-6-115x115',
+				author: 'Bill Johnson',
+				status: 'Client'
+			})
+			+quote-tara({
+				text: 'I feel very lucky to have Woodcraft to rely on for custom casework and cabinetry. They did a great job on two projects for my family.',
+				img: 'user-7-115x115',
+				author: 'Sam Fitzgerald',
+				status: 'Client'
+			})
+			+quote-tara({
+				text: 'As a professional Interior Designer and a new homeowner, I recommend these guys for their consistent, quality workmanship.',
+				img: 'user-8-115x115',
+				author: 'Stephanie Williams',
+				status: 'Client'
+			})
+
+
+	// Section CTA
+	+parallax({
+		img: 'bg-cta-3',
+		innerClass: 'section-xxl context-dark text-md-left'
+	})
+		.container: .row.justify-content-end: .col-sm-9.col-md-7.col-lg-5
+			.cta-modern
+				h3.cta-modern-title.cta-modern-title-2.oh-desktop: span.d-inline-block.wow.fadeInLeft Over 20 Years of Woodworking
+				p.cta-modern-text.cta-modern-text-2.oh-desktop( data-wow-delay='.1s' )
+					span.cta-modern-decor.cta-modern-decor-2.wow.slideInLeft
+					span.d-inline-block.wow.slideInUp We offer quality woodworking for you
+				a.button.button-lg.button-secondary.button-winona.wow.fadeInRight( href='contacts.html', data-wow-delay='.2s' ) Contact us
+
+
+	// Tell
+	section.section.section-sm.section-first.bg-default
+		.container
+			h3.oh-desktop: span.d-inline-block.wow.slideInUp Tell us About Your Project
+			.owl-carousel( data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-margin='30', data-dots='true', data-mouse-drag='false' )
+				+team-abby({
+					img: 'woodworking/team-1-270x270',
+					name: 'Ben Smith',
+					status: 'Founder'
+				}).wow.slideInDown
+				+team-abby({
+					img: 'woodworking/team-2-270x270',
+					name: 'Ann Williams',
+					status: 'Designer'
+				}).wow.slideInUp
+				+team-abby({
+					img: 'woodworking/team-3-270x270',
+					name: 'Adam McMillan',
+					status: 'Shop Foreman'
+				}).wow.slideInDown
+				+team-abby({
+					img: 'woodworking/team-4-270x270',
+					name: 'Peter Wilson',
+					status: 'Finisher'
+				}).wow.slideInUp
+
+
+	form.rd-form.rd-mailform.form-style-1( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+				.row.row-20.gutters-20
+					.col-md-6.col-lg-4.oh-desktop: .form-wrap.wow.slideInDown
+						input.form-input( id='contact-your-name-6', type='text', name='name', data-constraints='@Required' )
+						label.form-label( for='contact-your-name-6' ) Your Name*
+					.col-md-6.col-lg-4.oh-desktop: .form-wrap.wow.slideInUp
+						input.form-input( id='contact-email-6', type='email', name='email', data-constraints='@Email @Required' )
+						label.form-label( for='contact-email-6' ) Your E-mail*
+					.col-lg-4.oh-desktop: .form-wrap.wow.slideInDown
+						//Select 2
+						select.form-input( data-minimum-results-for-search='Infinity', data-constraints='@Required' )
+							option( value='1' ) Select a Service
+							option( value='2' ) Design Services
+							option( value='3' ) Home Renovation
+							option( value='4' ) Joinery Services
+					.col-12: .form-wrap.wow.fadeIn
+						label.form-label( for='contact-message-6' ) Message
+						textarea.form-input.textarea-lg( id='contact-message-6', name='message', data-constraints='@Required' )
+				.group-custom-1.group-middle.oh-desktop
+					button.button.button-lg.button-primary.button-winona.wow.fadeInRight( type='submit' ) Send message
+					+quote-classic({
+						text: 'Feel free to describe your future project in details.'
+					}).quote-classic-3.wow.slideInDown
+
+
+	section.section.section-sm.section-last.bg-default
+		.container-fluid.container-inset-0.isotope-wrap
+			h3.wow.fadeInRight Our portfolio
+			.row.row-10.gutters-10.isotope( data-lightgallery='group' )
+				.col-sm-4.col-xl-2.isotope-item.oh-desktop
+					+thumbnail-mary({
+						img: 'woodworking/project-7-311x585',
+						imgOriginal: 'woodworking/project-4-1200x800-original',
+						title: 'LA toy store',
+						location: 'Custom woodwork'
+					}).thumbnail-mary-2.block-3.wow.slideInLeft
+				.col-sm-8.col-xl-4.isotope-item.oh-desktop
+					+thumbnail-mary({
+						img: 'woodworking/project-8-631x587',
+						imgOriginal: 'woodworking/project-8-1200x800-original',
+						title: 'Seattle Fitness club',
+						location: 'Pool pavilion Renovation'
+					}).thumbnail-mary-big.block-3.wow.slideInRight
+				.col-sm-4.col-xl-2.isotope-item.oh-desktop
+					+thumbnail-mary({
+						img: 'woodworking/project-9-311x289',
+						imgOriginal: 'woodworking/project-9-1200x800-original',
+						title: 'National library',
+						location: 'Commercial cabinetry'
+					}).thumbnail-mary-2.block-3.wow.slideInDown
+				.col-sm-8.col-xl-4.isotope-item.oh-desktop
+					+thumbnail-mary({
+						img: 'woodworking/project-10-631x289',
+						imgOriginal: 'woodworking/project-10-1200x800-original',
+						title: 'Private kindergarten',
+						location: 'Furniture construction'
+					}).block-3.wow.slideInUp
+				.col-sm-4.col-xl-2.isotope-item.oh-desktop
+					+thumbnail-mary({
+						img: 'woodworking/project-11-311x289',
+						imgOriginal: 'woodworking/project-11-1200x800-original',
+						title: 'Sharming Inn',
+						location: 'Renovation'
+					}).thumbnail-mary-2.block-3.wow.slideInUp
+				.col-sm-4.col-xl-2.isotope-item.oh-desktop
+					+thumbnail-mary({
+						img: 'woodworking/project-12-311x289',
+						imgOriginal: 'woodworking/project-12-1200x800-original',
+						title: 'Pace hotel',
+						location: 'Room design'
+					}).thumbnail-mary-2.block-3.wow.slideInRight
+				.col-sm-4.col-xl-2.isotope-item.oh-desktop
+					+thumbnail-mary({
+						img: 'woodworking/project-13-311x289',
+						imgOriginal: 'woodworking/project-1-1200x800-original',
+						title: 'Bert art gallery',
+						location: 'Custom cabinetry'
+					}).thumbnail-mary-2.block-3.wow.slideInLeft
+
+
+	// Latest News
+	section.section.section-lg.bg-gray-100
+		.container
+			h3.oh-desktop: span.d-inline-block.wow.slideInDown Latest News
+			.owl-carousel.owl-style-13( data-items='1', data-md-items='2', data-margin='30', data-autoplay='true', data-nav='true', data-dots='true' )
+				+post-creative({
+					img: 'woodworking/post-1-440x229',
+					title: 'Designing and finishing the<br> Country Style Dining Room',
+					time: { datetime: '2019-09-09', datetext: 'September 9, 2019' },
+					comments: '3 Comments'
+				})
+				+post-creative({
+					img: 'woodworking/post-2-440x229',
+					title: '6 Important Facts About<br> Walnut for You to Know',
+					time: { datetime: '2019-10-29', datetext: 'October 29, 2019' },
+					comments: '6 Comments'
+				})
+				+post-creative({
+					img: 'woodworking/post-3-440x229',
+					title: 'Designing and finishing the<br> Country Style Dining Room',
+					time: { datetime: '2019-09-09', datetext: 'September 9, 2019' },
+					comments: '3 Comments'
+				})
+				+post-creative({
+					img: 'woodworking/post-4-440x229',
+					title: '6 Important Facts About<br> Walnut for You to Know',
+					time: { datetime: '2019-10-29', datetext: 'October 29, 2019' },
+					comments: '6 Comments'
+				})
+
+
+	+parallax({
+		img: 'bg-counter-5',
+		innerClass: 'section-inset-9 context-dark'
+	})
+		.container: .row.row-30.justify-content-center.justify-content-xl-between.align-items-lg-end
+			.col-sm-6.col-md-3
+				+counter-classic({
+					number: '640',
+					title: 'projects'
+				})
+			.col-sm-6.col-md-3
+				+counter-classic({
+					number: '15',
+					title: 'awards won'
+				})
+			.col-sm-6.col-md-3
+				+counter-classic({
+					number: '24',
+					title: 'craftmen'
+				})
+			.col-sm-6.col-md-3
+				+counter-classic({
+					number: '150',
+					title: 'new projects'
+				})
+
+
+	// Our Shop
+	section.section.section-lg.bg-default
+		.container
+			h3.oh-desktop: span.d-inline-block.wow.slideInUp Our Shop
+			.row.row-lg.row-30
+				.col-sm-6.col-lg-4.col-xl-3
+					+product({
+						img: 'woodworking/product-1-195x141',
+						rating: ['', '', '', '', 'text-gray-13'],
+						title: 'Wooden Table',
+						price: '245'
+					}).wow.fadeInLeft( data-wow-delay='.15s' )
+				.col-sm-6.col-lg-4.col-xl-3
+					+product({
+						img: 'woodworking/product-2-195x141',
+						rating: ['', '', '', '', ''],
+						title: 'White Toolbox',
+						price: '245',
+						new: true
+					}).wow.fadeInLeft( data-wow-delay='.1s' )
+				.col-sm-6.col-lg-4.col-xl-3
+					+product({
+						img: 'woodworking/product-3-195x141',
+						rating: ['', '', '', '', ''],
+						title: 'Wooden Table',
+						price: '245'
+					}).wow.fadeInLeft( data-wow-delay='.05s' )
+				.col-sm-6.col-lg-4.col-xl-3
+					+product({
+						img: 'woodworking/product-4-195x141',
+						rating: ['', '', '', '', 'text-gray-13'],
+						title: 'White Coffee Table',
+						price: '245',
+						priceOld: '400'
+					}).wow.fadeInLeft
+
+
+	// Clients Jean
+	include ../sections/_clients-jean
+
+
+	// Page Footer
+	+footer-modern({
+		textForm: 'Sign up today for the latest news and tips',
+		list: [
+			{ text: 'Design Services' },
+			{ text: 'Custom Woodwork' },
+			{ text: 'Joinery Services' },
+			{ text: 'Painting Services' },
+			{ text: 'Furniture Manufacture' },
+			{ text: 'Home Renovation' }
+		]
+	}).footer-modern-2

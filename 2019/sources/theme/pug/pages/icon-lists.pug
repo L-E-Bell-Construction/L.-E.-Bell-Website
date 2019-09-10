@@ -1,0 +1,142 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_box-icon
+
+block variables
+	-
+		var
+			activeCategory = 'pages',
+			pageName = 'Icon Lists';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-elements-1'
+	})
+
+	// Icon Classic
+	section.section.section-lg.bg-default
+		.container
+			h3.font-weight-bold.text-spacing-50 #1
+			.row.row-md.row-50
+				.col-sm-6.col-xl-4
+					+box-icon-classic({
+						unit: 'flex-column text-center flex-md-row text-md-left',
+						icon: 'linearicons-hammer-wrench',
+						title: 'Modern Equipment',
+						text: 'Cum amicitia mori, omnes galluses consum camerar, secundus mortemes.'
+					})
+				.col-sm-6.col-xl-4
+					+box-icon-classic({
+						unit: 'flex-column text-center flex-md-row text-md-left',
+						icon: 'linearicons-map-marker-check',
+						title: '12 Offices',
+						text: 'Teres hydra una imperiums xiphias est. Triticum de regius brodium, demitto advena!'
+					})
+				.col-sm-6.col-xl-4
+					+box-icon-classic({
+						unit: 'flex-column text-center flex-md-row text-md-left',
+						icon: 'linearicons-users2',
+						title: 'Qualified Team',
+						text: 'Heuretes primus pulchritudine est. Pius, superbus nixuss sapienter fallere de flavum.'
+					})
+
+
+	// Icon Creative
+	+parallax({
+		img: 'bg-icon',
+		innerClass: 'section-xxl context-dark'
+	})
+		.container
+			h3.font-weight-bold.text-spacing-200 #2
+			.row.row-lg.row-30
+				.col-sm-6.col-md-4.col-lg-3
+					+box-icon-creative({
+						icon: 'linearicons-trophy2',
+						title: 'The largest oil producer'
+					})
+				.col-sm-6.col-md-4.col-lg-3
+					+box-icon-creative({
+						icon: 'linearicons-flag',
+						title: '460 drilling rigs worldwide'
+					})
+				.col-sm-6.col-md-4.col-lg-3
+					+box-icon-creative({
+						icon: 'linearicons-gas',
+						title: '2400 petrol stations'
+					})
+				.col-sm-6.col-md-4.col-lg-3
+					+box-icon-creative({
+						icon: 'linearicons-medal-empty icon-big',
+						title: 'ISO 9001:2008 Certified'
+					})
+
+
+	// Counter Modern
+	section.section.section-sm.section-first.bg-default
+		.container
+			h3.font-weight-bold.text-spacing-50 #3
+			.row.row-lg.row-50.bordered-1
+				.col-sm-6.col-lg-4
+					+box-icon-modern({
+						icon: 'mdi mdi-math-compass',
+						title: 'Architectural Design',
+						text: 'Regius hippotoxota callide experientias tata est. Tolerare sensim ducunt ad lotus'
+					})
+				.col-sm-6.col-lg-4
+					+box-icon-modern({
+						icon: 'mdi mdi-format-paint icon-32',
+						title: 'Reconstruction',
+						text: 'Azureus, domesticus stellas virtualiter anhelare de mirabilis, ferox mons.'
+					})
+				.col-sm-6.col-lg-4
+					+box-icon-modern({
+						icon: 'mdi mdi-worker icon-39',
+						title: 'General Contracting',
+						text: 'Peritus, neuter coordinataes satis transferre de magnum, rusticus amicitia.'
+					})
+
+
+	// Counter Modern
+	section.section.section-sm.section-last.bg-default
+		.container
+			h3.font-weight-bold.text-spacing-50 #4
+			.row.row-30.row-desktop-0
+				.col-sm-6.col-lg-4.col-xl-3
+					+box-icon-megan({
+						icon: 'linearicons-cog icon-46',
+						title: 'Modern Equipment',
+						text: 'Etiam lacinia quis nisl id malesuada. Sed eget ultrices nisi. Vivamus ac ornare'
+					}).block-3
+				.col-sm-6.col-lg-4.col-xl-3
+					+box-icon-megan({
+						icon: 'linearicons-pencil-ruler',
+						title: 'Architectural Design',
+						text: 'Nunquam quaestio scutum. Cum devatio resistere, omnes impositioes examinare.'
+					}).block-3
+				.col-sm-6.col-lg-4.col-xl-3
+					+box-icon-megan({
+						icon: 'linearicons-license2 icon-53',
+						title: 'Quality Materials',
+						text: 'Est barbatus capio, cesaris. Peritus, rusticus victrixs tandem examinare.'
+					}).block-3
+				.col-sm-6.col-lg-4.col-xl-3
+					+box-icon-megan({
+						icon: 'linearicons-thumbs-up',
+						title: 'Qualified Team',
+						text: 'Pol, talis spatii! Cum absolutio ridetis, omnes imberes visum salvus.'
+					}).block-3
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic

@@ -1,0 +1,100 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_header-classic
+include ../sections/_footer-classic
+include ../components/_thumbnail
+
+block variables
+	-
+		var
+			activeCategory = 'projects',
+			pageName = 'Grid Gallery';
+
+block page
+	// Page Header
+	+navbar-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [ pageName ],
+		bgImage: 'bg-project'
+	})
+
+	// Grid Gallery
+	section.section.section-lg.bg-default.isotope-wrap
+		.container
+			.isotope-filters.isotope-filters-horizontal
+				//- Isotope Filters
+				button.isotope-filters-toggle.button.button-sm.button-icon.button-icon-right.button-gray-3( data-custom-toggle='.gallery-filters-list', data-custom-toggle-disable-on-blur='true', data-custom-toggle-hide-on-blur='true' )
+					span.icon.mdi.mdi-chevron-down
+					| Filter
+				ul.isotope-filters-list.gallery-filters-list
+					li: a.active( href='#', data-isotope-filter='*' ) All
+					li: a( href='#', data-isotope-filter='Type 1' ) Reconstruction
+					li: a( href='#', data-isotope-filter='Type 2' ) Architectural Design
+		.container-fluid.container-inset-0
+			.row.row-30.row-desktop-8.gutters-8.isotope.hoverdir( data-lightgallery='group' )
+				.col-sm-6.col-lg-4.col-xxl-3.isotope-item( data-filter='Type 2' )
+					+thumbnail-modern({
+						img: 'grid-gallery-1-474x355',
+						imgOriginal: 'grid-gallery-1-1200x800-original',
+						title: 'Project name #1',
+						badge: 'Construction management'
+					}).block-1.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3.isotope-item( data-filter='Type 1' )
+					+thumbnail-modern({
+						img: 'grid-gallery-2-474x355',
+						imgOriginal: 'grid-gallery-2-1200x800-original',
+						title: 'Project name #2',
+						badge: 'Consulting'
+					}).block-1.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3.isotope-item( data-filter='Type 2' )
+					+thumbnail-modern({
+						img: 'grid-gallery-3-474x355',
+						imgOriginal: 'grid-gallery-3-1200x800-original',
+						title: 'Project name #3',
+						badge: 'Green construction'
+					}).block-1.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3.isotope-item( data-filter='Type 1' )
+					+thumbnail-modern({
+						img: 'grid-gallery-4-474x355',
+						imgOriginal: 'grid-gallery-4-1200x800-original',
+						title: 'Project name #4',
+						badge: 'General contracting'
+					}).block-1.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3.isotope-item( data-filter='Type 2' )
+					+thumbnail-modern({
+						img: 'grid-gallery-5-474x355',
+						imgOriginal: 'grid-gallery-5-1200x800-original',
+						title: 'Project name #5',
+						badge: 'Construction planning'
+					}).block-1.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3.isotope-item( data-filter='Type 1' )
+					+thumbnail-modern({
+						img: 'grid-gallery-6-474x355',
+						imgOriginal: 'grid-gallery-6-1200x800-original',
+						title: 'Project name #6',
+						badge: 'Construction'
+					}).block-1.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3.isotope-item( data-filter='Type 2' )
+					+thumbnail-modern({
+						img: 'grid-gallery-7-474x355',
+						imgOriginal: 'grid-gallery-7-1200x800-original',
+						title: 'Project name #7',
+						badge: 'Reconstruction'
+					}).block-1.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+				.col-sm-6.col-lg-4.col-xxl-3.isotope-item( data-filter='Type 1' )
+					+thumbnail-modern({
+						img: 'grid-gallery-8-474x355',
+						imgOriginal: 'grid-gallery-8-1200x800-original',
+						title: 'Project name #8',
+						badge: 'Architectural design'
+					}).block-1.hoverdir-item( data-hoverdir-target='.thumbnail-modern-caption' )
+
+
+	// Subscribe to Our Newsletter
+	include ../sections/_section-newsletter
+
+	// Page Footer
+	+footer-classic
